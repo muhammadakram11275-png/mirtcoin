@@ -1,0 +1,24 @@
+name: Build and release MirtCoin
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm install
+      - run: npm run dist
+      - name: SHA-256 checksums
+        shell: pwsh
+        run: |
+          cd dist
+          Get-ChildItem *.exe | ForEach-Object { "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)" } | Out-File -Encoding ascii SHA256SUMS.txt
+      - uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with: { files: "dist/*.exe\ndist/SHA256SUMS.txt", generate_release_notes: true }
