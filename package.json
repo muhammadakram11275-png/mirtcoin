@@ -1,0 +1,36 @@
+{
+  "name": "mirtcoin-desktop",
+  "productName": "MirtCoin",
+  "version": "4.3.0",
+  "description": "MirtCoin ($MIRT) desktop: full node + wallet + miner in one app",
+  "main": "main.js",
+  "author": "MirtCoin",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.mirtcoin.desktop",
+    "productName": "MirtCoin",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "preload.js", "server.js", "engine.js", "seeds.json", "checkpoints.json", "package.json", "site/**/*", "build/icon.png"],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [{ "target": "nsis", "arch": ["x64"] }, { "target": "portable", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MirtCoin",
+      "artifactName": "MirtCoin-Setup-${version}.${ext}"
+    },
+    "portable": { "artifactName": "MirtCoin-Portable-${version}.${ext}" }
+  }
+}
