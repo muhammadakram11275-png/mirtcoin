@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MirtCoin ($MIRT) - Bitcoin-style blockchain</title><meta name="description" content="MirtCoin: Bitcoin-style Proof-of-Work blockchain. Create a wallet, mine blocks, send MIRT."><meta property="og:title" content="MirtCoin ($MIRT)"><meta property="og:description" content="Bitcoin-style Proof-of-Work blockchain. Mine it, own it."><meta property="og:image" content="/logo.png"><link rel="apple-touch-icon" href="/logo.png"><meta name="theme-color" content="#030303">
+<link rel="icon" type="image/png" href="data:image/png;base64,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"><meta name="description" content="$MIRT is a Bitcoin-style Proof-of-Work blockchain. Create a wallet, mine blocks and send MIRT."><meta property="og:title" content="MirtCoin ($MIRT) - Bitcoin-style blockchain"><meta property="og:description" content="Mine MIRT, create wallets and explore blocks on the MirtCoin mainnet."><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030303;--p:#0b0c0d;--ln:rgba(255,255,255,.09);--mu:#8B8B99;--cy:#cfd5db;--pu:#f2f4f6;--bl:#6f767d;--m:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:#e9ecef;font:16px/1.6 'Space Grotesk',sans-serif;overflow-x:hidden;background-image:radial-gradient(70vmax 50vmax at 50% -8%,rgba(120,128,136,.30),transparent 60%),radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:auto,26px 26px}
+a{color:inherit}.w{max-width:620px;margin:0 auto;padding:0 18px}section{padding:56px 0;position:relative;z-index:1}
+h2{font-size:clamp(28px,8vw,40px);letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.ey{font:500 11px var(--m);letter-spacing:.2em;text-transform:uppercase;color:var(--mu);text-align:center}
+.ch{background:linear-gradient(180deg,#fff 15%,#7a7a8c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.g{background:linear-gradient(90deg,var(--cy),var(--bl),var(--pu),var(--bl),var(--cy));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:-220% 0}}
+#sp{position:fixed;left:0;top:0;width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;background:radial-gradient(circle,rgba(200,206,212,.16),transparent 65%);pointer-events:none;z-index:0;opacity:0;transition:opacity .5s}
+#ld{position:fixed;inset:0;z-index:99;background:#030303;display:grid;place-items:center;animation:ldo .7s 1.5s forwards}
+#ld svg{width:210px;filter:drop-shadow(0 0 28px rgba(200,206,212,.55));animation:lz 1.1s cubic-bezier(.2,1.4,.4,1) both}
+#ld::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;border:1px solid var(--cy);animation:rg 1.2s ease-out infinite}
+@keyframes lz{from{transform:scale(.3) rotate(-30deg);opacity:0}}@keyframes rg{to{transform:scale(3.6);opacity:0}}@keyframes ldo{to{opacity:0;visibility:hidden}}
+.tk{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--ln);font:11px var(--m);letter-spacing:.16em;color:var(--mu);padding:9px 0;position:relative;z-index:2}
+.tk div{display:inline-block;animation:mq 34s linear infinite}.tk b{color:var(--cy);margin:0 14px;font-weight:400}@keyframes mq{to{transform:translateX(-50%)}}
+nav{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:20px;padding:11px 18px;background:rgba(3,3,3,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ln);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}nav a{font:11px var(--m);letter-spacing:.14em;text-decoration:none;color:var(--mu);transition:color .2s}nav a:hover{color:#fff}
+nav .lo{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.06em;color:#fff;font-size:15px;margin-right:auto}nav .lo svg{width:48px;height:22px}
+.orb{position:relative;width:min(250px,64vw);aspect-ratio:1;margin:46px auto 30px}
+.orb i{position:absolute;inset:0;border-radius:50%;border:1px solid var(--ln)}.orb i:nth-child(1){inset:-12%;animation:pu 4s ease-in-out infinite}.orb i:nth-child(2){inset:-30%;border-style:dashed;animation:spin 60s linear infinite}.orb i:nth-child(3){inset:-52%;opacity:.5;animation:pu 4s 1.3s ease-in-out infinite}
+.orb b{position:absolute;inset:-12%;animation:spin 9s linear infinite}.orb b::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--cy);box-shadow:0 0 16px var(--cy)}
+.orb b+b{inset:-30%;animation-duration:15s;animation-direction:reverse}.orb b+b::after{background:var(--pu);box-shadow:0 0 16px var(--pu)}
+@keyframes pu{50%{transform:scale(1.05);border-color:rgba(200,206,212,.45)}}@keyframes spin{to{transform:rotate(360deg)}}
+.orb svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{translate:0 -10px}}.sw{animation:swp 3.6s ease-in-out infinite}@keyframes swp{0%{translate:-140px 0}55%,100%{translate:640px 0}}
+h1{font-size:clamp(42px,12vw,72px);line-height:1;letter-spacing:-.035em;text-align:center;margin:22px 0 16px}
+.lead{color:var(--mu);text-align:center;max-width:460px;margin:0 auto 26px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{font:500 12px var(--m);letter-spacing:.1em;text-transform:uppercase;padding:14px 20px;border-radius:12px;border:1px solid var(--ln);color:#fff;background:transparent;text-decoration:none;cursor:pointer;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);border-color:#555}.btn:active{transform:scale(.97)}.btn:focus-visible,input:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.btn.f{background:#e9ecef;color:#0A0A10;border:0}.btn.f::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(236,232,222,.45) 50%,transparent 60%);transform:translateX(-120%);animation:bs 3.4s ease-in-out infinite}@keyframes bs{50%,100%{transform:translateX(120%)}}
+.lr{display:flex;align-items:baseline;gap:10px;font:12px var(--m);margin:11px 0}.lr i{flex:1;border-bottom:1px dotted #3a3a48;transform:translateY(-3px)}.lr span{color:var(--mu);letter-spacing:.08em;text-transform:uppercase}.lr b{font-weight:500;color:#fff}
+.tkt{background:var(--p);border:1px solid var(--ln);border-bottom:0;padding:22px 18px 26px;position:relative;margin-bottom:12px;border-radius:14px 14px 0 0}
+.tkt::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-8px;height:8px;background:radial-gradient(circle at 8px 0,var(--p) 7.5px,transparent 8px) 0 0/16px 8px repeat-x}
+.th{display:flex;justify-content:space-between;font:11px var(--m);letter-spacing:.14em;color:var(--mu);text-transform:uppercase;margin-bottom:14px}.th b{display:block;color:#fff;font-weight:500;margin-top:2px}
+.sr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-top:1px solid var(--ln)}.sr small{display:block;font:11px var(--m);color:var(--mu)}.sr em{font:normal 11px var(--m);letter-spacing:.12em;color:#d7dce1}.sr em.c{color:#cfcfda}.sr em.c::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cy);margin-right:7px;animation:bl 1.2s infinite}@keyframes bl{50%{opacity:.2}}
+label{display:block;font:11px var(--m);color:var(--mu);letter-spacing:.1em;text-transform:uppercase;margin-top:18px}
+.addr{background:#020202;border:1px solid var(--ln);border-radius:10px;padding:12px;margin:8px 0 12px;font:12px var(--m);word-break:break-all}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}.chips button{font:500 12px var(--m);background:transparent;color:#fff;border:1px solid var(--ln);border-radius:10px;padding:10px 13px;cursor:pointer;transition:.2s}.chips button.on{border-color:var(--cy);color:var(--cy);box-shadow:0 0 18px rgba(200,206,212,.25)}
+.out{font-size:36px;font-weight:700;letter-spacing:-.02em;margin:2px 0 16px}
+.rules{font:12px/1.6 var(--m);color:var(--mu);margin-top:14px;display:grid;gap:6px}
+input[type=text]{width:100%;background:#020202;border:1px solid var(--ln);border-radius:10px;color:#fff;padding:13px;font:13px var(--m);margin:6px 0 4px}
+#pw{margin-top:20px;display:none}#pw.on{display:block;animation:pop .8s cubic-bezier(.2,1.2,.3,1)}#pc{width:100%;height:auto;border-radius:16px;box-shadow:0 24px 60px rgba(120,128,136,.35);margin-bottom:12px}@keyframes pop{from{opacity:0;transform:translateY(40px) rotate(-6deg) scale(.9)}}
+.stack{display:flex;height:14px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,.06);margin:16px 0 18px}.stack i{display:block;width:0;height:100%;transition:width 1.8s cubic-bezier(.2,.8,.2,1)}
+.rm{position:relative;display:grid;gap:26px;padding-left:28px;margin-top:20px}.rm::before,.rm::after{content:"";position:absolute;left:5px;top:6px;width:2px}.rm::before{bottom:6px;background:var(--ln)}.rm::after{height:var(--p,0%);max-height:calc(100% - 12px);background:linear-gradient(var(--cy),var(--pu));box-shadow:0 0 12px var(--cy);transition:height 1.2s}
+.rm div{position:relative}.rm div::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid #333;transition:.5s}.rm div.on::before{background:var(--cy);border-color:var(--cy);box-shadow:0 0 14px var(--cy)}
+.rm b{display:block}.rm span{color:var(--mu);font-size:14px}.rm small{font:10px var(--m);letter-spacing:.14em;color:var(--mu)}
+details{border-bottom:1px solid var(--ln);padding:15px 0}summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";font:300 22px/1 var(--m);color:var(--cy);transition:transform .3s}details[open] summary::after{transform:rotate(45deg)}details p{color:var(--mu);margin-top:8px;font-size:14px}
+footer{position:relative;z-index:1;margin:30px auto 0;max-width:620px;padding:0 18px 60px}.ft{background:var(--p);border:1px solid var(--ln);padding:22px 18px;font:11px/1.8 var(--m);color:var(--mu);letter-spacing:.04em;position:relative;margin-bottom:12px}.ft::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-8px;height:8px;background:radial-gradient(circle at 8px 0,var(--p) 7.5px,transparent 8px) 0 0/16px 8px repeat-x}
+.bc{height:34px;margin-top:14px;background:repeating-linear-gradient(90deg,#8b8b99 0 2px,transparent 2px 4px,#8b8b99 4px 5px,transparent 5px 9px,#8b8b99 9px 12px,transparent 12px 14px);opacity:.7}
+#toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,90px);background:#0c0d0e;border:1px solid var(--cy);border-radius:12px;padding:10px 16px;font:13px var(--m);transition:.3s;z-index:9}#toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(32px);filter:blur(6px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1),filter .8s;transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none;filter:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
+html.sk #ld{display:none}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.07;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+#em{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#pg{position:fixed;left:0;top:0;height:2px;width:100%;background:linear-gradient(90deg,var(--bl),var(--cy),var(--pu));transform:scaleX(0);transform-origin:0 50%;z-index:60}
+.cdw{display:none;justify-content:center;gap:10px;margin:0 0 30px}.cdw.on{display:flex}.cdw div{min-width:62px;padding:10px 0;border:1px solid var(--ln);border-radius:12px;background:var(--p);text-align:center;font:500 22px var(--m)}.cdw small{display:block;font:9px var(--m);letter-spacing:.14em;color:var(--mu)}
+
+#agent .stage{perspective:900px;height:310px;display:grid;place-items:center;margin:14px 0 6px;position:relative}
+.rig{position:relative;width:190px;height:190px;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));animation:hv 4.5s ease-in-out infinite}
+.talk .rig{animation-duration:1.1s}
+@keyframes hv{50%{translate:0 -14px}}
+.rig .d{position:absolute;inset:0;border-radius:50%}
+.front,.back{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden}
+.front{transform:translateZ(17px);background:radial-gradient(circle at 38% 28%,#FF9A5C,#E2570F 52%,#8F2F06);box-shadow:inset 0 0 0 4px #6E2205,inset 0 0 0 11px rgba(0,0,0,.14),inset 0 0 40px rgba(255,255,255,.12)}
+.front>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.back{transform:translateZ(-17px) rotateY(180deg);background:radial-gradient(circle at 50% 40%,#2E1609,#030303);box-shadow:inset 0 0 0 5px #A33608}
+.back>svg{position:absolute;left:16%;top:34%;width:68%}
+.eyes{transform-box:fill-box;transform-origin:center;animation:bk 5s infinite}
+@keyframes bk{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.om{opacity:0;transform-box:fill-box;transform-origin:center}
+.talk .om{opacity:1;animation:mo .2s ease-in-out infinite alternate}.talk .sm{opacity:0}
+@keyframes mo{from{transform:scaleY(.35)}to{transform:scaleY(1.7) scaleX(.9)}}
+.ant{position:absolute;left:50%;top:-40px;width:5px;height:44px;margin-left:-2.5px;background:#7A2A06;border-radius:3px}
+.ant::after{content:"";position:absolute;left:50%;top:-10px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#FFD2A8;box-shadow:0 0 18px 4px rgba(200,206,212,.8);animation:ap 1.8s ease-in-out infinite}
+.talk .ant::after{animation-duration:.4s}@keyframes ap{50%{box-shadow:0 0 30px 9px rgba(200,206,212,.95)}}
+.hand{position:absolute;width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFF6EC,#E3B189);border:3px solid #6E2205;box-shadow:0 8px 14px rgba(0,0,0,.4)}
+.hand.l{left:-50px;top:104px;transform:translateZ(34px);animation:hl 3.2s ease-in-out infinite}
+.hand.r{right:-50px;top:72px;transform:translateZ(34px);animation:hl 3.7s .6s ease-in-out infinite}
+.talk .hand.r{animation:wv .45s ease-in-out infinite alternate}
+@keyframes hl{50%{translate:0 10px}}@keyframes wv{from{translate:0 -8px}to{translate:6px 12px}}
+.sh{position:absolute;bottom:6px;left:50%;width:150px;height:16px;margin-left:-75px;border-radius:50%;background:rgba(0,0,0,.55);filter:blur(9px);animation:shd 4.5s ease-in-out infinite}
+.talk .sh{animation-duration:1.1s}@keyframes shd{50%{transform:scale(.82);opacity:.6}}
+.chat #msgs{max-height:290px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-bottom:6px;scrollbar-width:thin}
+.m{max-width:90%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}
+.m.b{background:rgba(200,206,212,.12);border:1px solid rgba(200,206,212,.28);border-top-left-radius:4px;align-self:flex-start}
+.m.u{background:#e9ecef;color:#0A0A10;align-self:flex-end;border-top-right-radius:4px}
+.qc{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}.qc::-webkit-scrollbar{display:none}
+.qc button{flex:none;font:11px var(--m);background:transparent;color:#fff;border:1px solid var(--ln);border-radius:999px;padding:8px 12px;cursor:pointer;transition:.2s}.qc button:hover{border-color:var(--cy);color:var(--cy)}
+.cin{display:flex;gap:8px;align-items:stretch}.cin input{flex:1;min-width:0;margin:0}.cin .btn{padding:0 14px}.cin .btn.on{border-color:var(--cy);box-shadow:0 0 18px rgba(200,206,212,.4)}
+.ctl{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;font:10px var(--m);color:var(--mu);letter-spacing:.04em}.ctl .btn{padding:8px 12px;font-size:10px;white-space:nowrap;flex:none}
+
+:root{--bg:#030303;--p:#09100d;--ln:rgba(200,206,212,.2);--mu:#8b9096;--px:'Silkscreen','VT323',monospace}
+body{font:14px/1.7 'JetBrains Mono',monospace;background-image:radial-gradient(70vmax 50vmax at 50% -8%,rgba(120,128,136,.28),transparent 60%),radial-gradient(rgba(200,206,212,.09) 1px,transparent 1px);background-size:auto,22px 22px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:49;background:repeating-linear-gradient(0deg,rgba(0,0,0,.2) 0 1px,transparent 1px 3px)}
+#scan{position:fixed;left:0;right:0;top:-90px;height:90px;z-index:48;pointer-events:none;background:linear-gradient(transparent,rgba(200,206,212,.08),transparent);animation:scn 7s linear infinite}@keyframes scn{to{top:100%}}
+#em{opacity:.32}
+h1,h2,.out{font-family:'Press Start 2P',monospace;text-transform:uppercase}
+h1{font-size:clamp(24px,10.5vw,52px);line-height:1.25;text-align:left;margin:14px 0 18px;letter-spacing:0}h1 .ch:first-child,h1 .ch+br+.g+br+.ch{font-size:.5em}
+h2{font-size:clamp(13px,4.2vw,20px);line-height:1.7;letter-spacing:0;margin-bottom:16px}h2::before{content:"> ";color:var(--cy)}
+.out{font-size:clamp(16px,5.5vw,24px);line-height:1.5}
+.cur{animation:bl 1s steps(2) infinite;color:var(--cy)}
+.boot{font:12px var(--px);letter-spacing:.12em;color:var(--mu);margin:6px 0 0;overflow:hidden;white-space:nowrap;width:0;animation:ty 2s steps(24) .3s forwards}@keyframes ty{to{width:100%}}
+.lead{text-align:left}.ey{font-family:var(--px);text-align:left}
+.ey,nav a,.btn,.th,label,.lr span,.sr small,.sr em,.rm small,.qc button,.ctl,.chips button,.cdw small,.hud{font-family:var(--px)}
+.lead,.rules,.m,details p,.rm span{font-family:'JetBrains Mono',monospace}
+.btn.f{background:var(--cy);color:#0a0b0c;font-weight:700}.btn.f::after{background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%)}
+.btn,.chips button,.qc button,input[type=text]{border-radius:4px}
+.m.u{background:#1b1e21;color:#e9ecef;border:1px solid var(--ln)}.m.b{border-radius:4px}
+.hud{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 26px;font-size:11px;letter-spacing:.1em;color:var(--mu)}.hud b{color:var(--cy);font-weight:400}.hud span:last-child b{color:#ff4d4d}
+nav{background:rgba(3,3,3,.85)}nav .lo{font-family:'Press Start 2P',monospace;font-size:11px}nav .lo svg{width:26px;height:26px}
+.tk{font-family:var(--px)}
+#ld{display:grid;align-content:center;justify-items:center;gap:22px;animation:ldo .7s 2.7s forwards}#ld::after{display:none}#ld svg{width:170px}
+.bt{font:12px var(--px);color:var(--cy);letter-spacing:.06em;display:grid;gap:6px}.bt p{white-space:nowrap;overflow:hidden;width:0;animation:ty .6s steps(30) forwards}.bt p:nth-child(1){animation-delay:.2s}.bt p:nth-child(2){animation-delay:.8s}.bt p:nth-child(3){animation-delay:1.4s}.bt p:nth-child(4){animation-delay:2s;color:#ff4d4d}
+.orb::before{content:"";position:absolute;inset:-26%;pointer-events:none;animation:rt 3s ease-in-out infinite;background:linear-gradient(#ff3b3b,#ff3b3b) 0 0/24px 2px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 0 0/2px 24px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 100% 0/24px 2px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 100% 0/2px 24px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 0 100%/24px 2px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 0 100%/2px 24px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 100% 100%/24px 2px no-repeat,linear-gradient(#ff3b3b,#ff3b3b) 100% 100%/2px 24px no-repeat}@keyframes rt{50%{transform:scale(.93);opacity:.5}}
+.orb .cn{position:absolute;inset:0;transform-style:preserve-3d;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));animation:fl 6s ease-in-out infinite}
+.orb .s3{position:absolute;inset:0;transform-style:preserve-3d;animation:cs 7s linear infinite}@keyframes cs{to{transform:rotateY(360deg)}}
+.orb .cf,.orb .cb{position:absolute;inset:0;backface-visibility:hidden}.orb .cf{transform:translateZ(11px)}.orb .cb{transform:rotateY(180deg) translateZ(11px)}
+.orb .cn svg{position:static;transform:none;animation:none;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 20px rgba(236,232,222,.45))}
+.orb{margin:58px auto 96px}.ed{position:absolute;inset:.8%;border-radius:50%;display:block}
+.tkt,.ft{border-radius:6px;border:1px solid var(--ln);padding-top:50px;box-shadow:0 0 40px rgba(200,206,212,.07)}
+.tkt::after,.ft::after{display:none}
+.tkt::before,.ft::before{content:"MIRT_TERMINAL://";position:absolute;left:0;right:0;top:0;height:32px;line-height:32px;padding-left:14px;font:11px var(--px);letter-spacing:.08em;color:var(--mu);border-bottom:1px solid var(--ln);border-radius:6px 6px 0 0;background:linear-gradient(#ff5d52,#ff5d52) right 58px center/9px 9px no-repeat,linear-gradient(#ffb020,#ffb020) right 38px center/9px 9px no-repeat,linear-gradient(#cfd5db,#cfd5db) right 18px center/9px 9px no-repeat,#0a0b0c}
+#agent .tkt::before{content:"MIRT_TERMINAL://TICK_AGENT"}#presale .tkt::before{content:"MIRT_TERMINAL://PRESALE"}#airdrop .tkt::before{content:"MIRT_TERMINAL://AIRDROP"}.ft::before{content:"MIRT_TERMINAL://SYSTEM_NOTICE"}
+.bn{margin:0 0 18px;border:1px solid var(--ln);border-radius:6px;overflow:hidden;box-shadow:0 0 40px rgba(200,206,212,.1)}
+#agent .stage{height:300px}.rig{width:200px;height:170px;z-index:1}.rig .d,.front,.back{border-radius:14px}
+.front{background:#25282b;box-shadow:inset 0 0 0 3px #0a0a0b,inset 0 0 0 6px #4a4d50}.back{background:#111315;box-shadow:inset 0 0 0 5px #33373a}.back>svg{left:20%;top:16%;width:60%}
+#pp{filter:drop-shadow(0 0 5px #ff2d2d)}
+.ant{background:#3a3d40}.ant::after{background:#ff4d4d;box-shadow:0 0 18px 4px rgba(255,60,60,.8);animation:ap2 1.4s ease-in-out infinite}.talk .ant::after{animation-duration:.4s}@keyframes ap2{50%{box-shadow:0 0 30px 9px rgba(255,60,60,1)}}
+.hand{border-radius:6px;background:#1d1f21;border:2px solid var(--cy);box-shadow:0 0 12px rgba(236,232,222,.45)}
+.bd{position:absolute;left:50%;bottom:4px;width:230px;margin-left:-115px;z-index:0}.sh{display:none}
+.stack,.stack i{border-radius:0}
+
+#fx{position:fixed;inset:0;z-index:55;pointer-events:none}
+#fl{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.fc{position:absolute;opacity:.2;translate:0 calc(var(--sy,0)*var(--z)*-.1px);animation:fcs 9s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(200,206,212,.4))}.fc svg{width:100%;height:auto;display:block}
+@keyframes fcs{50%{transform:translateY(-26px) rotateY(180deg) rotateZ(12deg)}}
+#cr2{position:fixed;left:-18px;top:-18px;width:36px;height:36px;border:1px solid var(--cy);border-radius:50%;pointer-events:none;z-index:70;opacity:0;box-shadow:0 0 14px var(--cy),inset 0 0 10px rgba(200,206,212,.4);transition:scale .2s,background .2s}#cr2.h{scale:1.9;background:rgba(200,206,212,.14)}
+@media(pointer:coarse){#cr2{display:none}}
+.gl{position:relative;display:inline-block}.gl::before,.gl::after{content:attr(data-t);position:absolute;inset:0;background:none;opacity:0;mix-blend-mode:screen;-webkit-text-fill-color:currentcolor}
+.gl::before{color:#ff2d55;animation:g1 4.5s infinite}.gl::after{color:#00e5ff;animation:g2 4.5s .05s infinite}
+@keyframes g1{0%,90%{opacity:0}91%{opacity:1;clip-path:inset(10% 0 60% 0);translate:-6px 0}94%{opacity:1;clip-path:inset(55% 0 15% 0);translate:7px 0}97%{opacity:1;clip-path:inset(30% 0 40% 0);translate:-3px 0}100%{opacity:0}}
+@keyframes g2{0%,90%{opacity:0}92%{opacity:1;clip-path:inset(60% 0 10% 0);translate:6px 0}95%{opacity:1;clip-path:inset(15% 0 55% 0);translate:-7px 0}98%{opacity:1;clip-path:inset(40% 0 30% 0);translate:4px 0}100%{opacity:0}}
+.cmd{font:13px var(--m);color:var(--cy);margin:-6px 0 22px;min-height:22px;text-shadow:0 0 10px rgba(200,206,212,.6)}
+.tkt,.bn{transition:transform .15s,opacity .8s,filter .8s}.btn{transition:translate .15s,transform .2s,box-shadow .2s,border-color .2s}
+.tkt:hover,.bn:hover{box-shadow:0 0 60px rgba(200,206,212,.22)}
+html.shk body{animation:shk .45s}@keyframes shk{20%{translate:-7px 3px}40%{translate:6px -4px}60%{translate:-4px 2px}80%{translate:2px -1px}}
+
+#points .tkt::before{content:"MIRT_TERMINAL://POINTS"}
+.pbar{height:10px;background:rgba(255,255,255,.07);margin:6px 0 8px;overflow:hidden}.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6f767d,#f2f4f6);box-shadow:0 0 14px rgba(200,206,212,.5);transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.pnote{font:11px var(--px);color:var(--mu);letter-spacing:.06em;margin:4px 0 14px;min-height:14px}
+#tl .sr .btn{padding:9px 12px;font-size:10px;flex:none}#tl .sr em.d{color:#e9ecef}
+#pt{font:700 26px 'Press Start 2P',monospace;margin-top:6px}#tr{margin-top:6px}
+.btn.f{background:linear-gradient(135deg,#f6f8fa,#9aa1a7 50%,#e8ebee);color:#0a0b0c}.hud span:last-child b{color:#ff4d4d}
+.ncs{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 22px;margin:0 0 10px;-webkit-overflow-scrolling:touch;perspective:900px}.ncs::-webkit-scrollbar{height:4px}.ncs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:2px}
+.nc{--c:#fff;--g:255,255,255;flex:0 0 176px;scroll-snap-align:center;aspect-ratio:3/4.3;border-radius:18px;position:relative;overflow:hidden;isolation:isolate;border:2px solid var(--c);box-shadow:0 0 0 1px rgba(0,0,0,.6),0 10px 34px rgba(var(--g),.35),inset 0 0 22px rgba(255,255,255,.18);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:12px 8px 12px;text-align:center;animation:ncin .9s both}
+@keyframes ncin{from{opacity:0;transform:translateY(24px) scale(.92)}}
+.nc>*{position:relative;z-index:2}.nc .bg,.nc .fx,.nc .hl{position:absolute!important;inset:0;z-index:0;pointer-events:none}.nc .fx{overflow:hidden;z-index:1}.nc .hl{z-index:3}
+.nc .bg{background-size:240% 240%;animation:ncbg 7s ease-in-out infinite}@keyframes ncbg{50%{background-position:100% 100%}}
+.nc .tg{font:700 10px var(--m);letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.4);border:1px solid var(--c);border-radius:20px;padding:3px 10px;backdrop-filter:blur(3px)}
+.nc .cn{width:74%;filter:drop-shadow(0 6px 14px rgba(0,0,0,.55)) drop-shadow(0 0 16px rgba(var(--g),.8));animation:ncf 3.6s ease-in-out infinite}@keyframes ncf{0%,100%{transform:translateY(5px) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+.nc .nm{width:100%;background:linear-gradient(transparent,rgba(0,0,0,.55) 40%);padding:14px 0 0;margin-bottom:-4px}.nc .nm b{display:block;font:700 13px var(--m);letter-spacing:.14em;color:#fff;text-shadow:0 0 12px rgba(var(--g),.9)}.nc .nm small{display:block;font:10px var(--m);color:rgba(255,255,255,.8);margin-top:3px}
+.nc .hl{background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 48%,rgba(255,255,255,.1) 52%,transparent 65%);background-size:260% 100%;background-position:130% 0;mix-blend-mode:overlay;animation:nchl 4.5s ease-in-out infinite}@keyframes nchl{60%,100%{background-position:-60% 0}}
+.nc .fx i{position:absolute;display:block}
+/* LEGENDARY: sun rays + rising sparks */
+.nc.leg{--c:#ffd34d;--g:255,170,30;animation:ncin .9s both,ncgl 2.8s ease-in-out .9s infinite}@keyframes ncgl{50%{box-shadow:0 0 0 1px rgba(0,0,0,.6),0 12px 52px rgba(255,170,30,.75),inset 0 0 30px rgba(255,255,255,.3)}}
+.nc.leg .bg{background-image:linear-gradient(150deg,#ffcf33,#ff7a00 40%,#c2185b 75%,#5b21b6)}
+.nc.leg .fx::before{content:"";position:absolute;left:50%;top:44%;width:360px;height:360px;margin:-180px 0 0 -180px;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.42) 0 7deg,transparent 7deg 20deg);-webkit-mask:radial-gradient(circle,#000 8%,transparent 66%);mask:radial-gradient(circle,#000 8%,transparent 66%);animation:ncrot 16s linear infinite}@keyframes ncrot{to{transform:rotate(360deg)}}
+.nc.leg .fx i{width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px #ffe27a;bottom:-6px;animation:ncup 3.2s linear infinite}
+@keyframes ncup{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:1}100%{transform:translateY(-250px) scale(1.2);opacity:0}}
+.nc .fx i:nth-child(1){left:12%;animation-delay:0s}.nc .fx i:nth-child(2){left:28%;animation-delay:.7s}.nc .fx i:nth-child(3){left:44%;animation-delay:1.5s}.nc .fx i:nth-child(4){left:60%;animation-delay:.3s}.nc .fx i:nth-child(5){left:74%;animation-delay:1.1s}.nc .fx i:nth-child(6){left:88%;animation-delay:2s}.nc .fx i:nth-child(7){left:52%;animation-delay:2.5s}
+/* EPIC: nebula, orbit rings, twinkling stars */
+.nc.epi{--c:#e0aaff;--g:214,80,255}
+.nc.epi .bg{background-image:radial-gradient(circle at 20% 15%,#f72585 0,transparent 45%),radial-gradient(circle at 85% 80%,#4cc9f0 0,transparent 45%),linear-gradient(160deg,#3a0ca3,#7209b7 55%,#240046)}
+.nc.epi .fx::before,.nc.epi .fx::after{content:"";position:absolute;left:50%;top:42%;border:2px solid rgba(255,255,255,.55);border-radius:50%;box-shadow:0 0 14px rgba(214,80,255,.8)}
+.nc.epi .fx::before{width:150px;height:46px;margin:-23px 0 0 -75px;animation:ncor 5s linear infinite}.nc.epi .fx::after{width:118px;height:118px;margin:-59px 0 0 -59px;border-style:dashed;border-color:rgba(76,201,240,.7);animation:ncrot 12s linear infinite reverse}@keyframes ncor{from{transform:rotate(-20deg) scaleY(1)}50%{transform:rotate(160deg) scaleY(.7)}to{transform:rotate(340deg) scaleY(1)}}
+.nc.epi .fx i{width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px #fff;animation:nctw 2.2s ease-in-out infinite}@keyframes nctw{0%,100%{opacity:.1;transform:scale(.5)}50%{opacity:1;transform:scale(1.8)}}
+.nc.epi .fx i:nth-child(1){left:14%;top:12%}.nc.epi .fx i:nth-child(2){left:80%;top:18%;animation-delay:.5s}.nc.epi .fx i:nth-child(3){left:22%;top:66%;animation-delay:1s}.nc.epi .fx i:nth-child(4){left:90%;top:60%;animation-delay:1.5s}.nc.epi .fx i:nth-child(5){left:50%;top:8%;animation-delay:.8s}.nc.epi .fx i:nth-child(6){left:8%;top:40%;animation-delay:1.9s}.nc.epi .fx i:nth-child(7){left:70%;top:80%;animation-delay:.2s}
+/* RARE: electric storm rings + lightning flashes */
+.nc.rar{--c:#7be0ff;--g:30,170,255}
+.nc.rar .bg{background-image:linear-gradient(165deg,#0077ff,#00c6ff 45%,#0a2a8a)}
+.nc.rar .fx::before,.nc.rar .fx::after{content:"";position:absolute;left:50%;top:42%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;border:2px solid rgba(255,255,255,.8);animation:ncpl 2.8s ease-out infinite}.nc.rar .fx::after{animation-delay:1.4s}@keyframes ncpl{from{transform:scale(.4);opacity:.9}to{transform:scale(3.4);opacity:0}}
+.nc.rar .fx i{width:2px;height:60px;background:linear-gradient(transparent,#fff,transparent);top:-70px;opacity:.8;animation:ncsc 2.4s linear infinite}@keyframes ncsc{to{transform:translateY(340px)}}
+.nc.rar .fx i:nth-child(1){left:10%}.nc.rar .fx i:nth-child(2){left:26%;animation-delay:.6s}.nc.rar .fx i:nth-child(3){left:42%;animation-delay:1.3s}.nc.rar .fx i:nth-child(4){left:58%;animation-delay:.2s}.nc.rar .fx i:nth-child(5){left:74%;animation-delay:1.8s}.nc.rar .fx i:nth-child(6){left:90%;animation-delay:.9s}.nc.rar .fx i:nth-child(7){left:50%;animation-delay:2.1s}
+/* UNCOMMON: emerald hex glow + fireflies */
+.nc.unc{--c:#9bffb5;--g:70,230,140}
+.nc.unc .bg{background-image:linear-gradient(160deg,#00b96b,#a3e635 55%,#046c4e)}
+.nc.unc .fx::before{content:"";position:absolute;inset:-40px;background:radial-gradient(circle,rgba(255,255,255,.55) 0 2px,transparent 3px) 0 0/22px 22px,radial-gradient(circle,rgba(255,255,255,.3) 0 2px,transparent 3px) 11px 11px/22px 22px;animation:ncdr 6s linear infinite}@keyframes ncdr{to{transform:translate(22px,22px)}}
+.nc.unc .fx::after{content:"";position:absolute;left:50%;top:42%;width:130px;height:130px;margin:-65px 0 0 -65px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 68%);animation:ncbr 3s ease-in-out infinite}@keyframes ncbr{50%{transform:scale(1.35);opacity:.5}}
+.nc.unc .fx i{width:6px;height:6px;border-radius:50%;background:#f7ffb0;box-shadow:0 0 10px 3px #d4ff4d;animation:ncfy 4s ease-in-out infinite}@keyframes ncfy{0%,100%{transform:translate(0,0);opacity:.2}50%{transform:translate(18px,-26px);opacity:1}}
+.nc.unc .fx i:nth-child(1){left:12%;top:70%}.nc.unc .fx i:nth-child(2){left:30%;top:20%;animation-delay:.8s}.nc.unc .fx i:nth-child(3){left:46%;top:80%;animation-delay:1.6s}.nc.unc .fx i:nth-child(4){left:66%;top:28%;animation-delay:.4s}.nc.unc .fx i:nth-child(5){left:82%;top:66%;animation-delay:2.2s}.nc.unc .fx i:nth-child(6){left:20%;top:48%;animation-delay:2.8s}.nc.unc .fx i:nth-child(7){left:74%;top:12%;animation-delay:1.2s}
+/* COMMON: brushed steel stripes + shimmer */
+.nc.com{--c:#e3e8ef;--g:190,200,215}
+.nc.com .bg{background-image:linear-gradient(160deg,#4b5563,#9aa5b4 45%,#f1f5f9 70%,#475569)}
+.nc.com .fx::before{content:"";position:absolute;inset:-30px;background:repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 6px,transparent 6px 18px);animation:ncst 5s linear infinite}@keyframes ncst{to{transform:translateX(36px)}}
+.nc.com .fx i{width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 6px #fff;animation:nctw 2.6s ease-in-out infinite}
+.nc.com .fx i:nth-child(1){left:16%;top:20%}.nc.com .fx i:nth-child(2){left:78%;top:30%;animation-delay:.6s}.nc.com .fx i:nth-child(3){left:30%;top:70%;animation-delay:1.2s}.nc.com .fx i:nth-child(4){left:86%;top:74%;animation-delay:1.8s}.nc.com .fx i:nth-child(5),.nc.com .fx i:nth-child(6),.nc.com .fx i:nth-child(7){display:none}
+.sr em.tl,.t-leg{color:#ffc846}.sr em.te,.t-epi{color:#d08cff}.sr em.tr2,.t-rar{color:#5ac8ff}.sr em.tu,.t-unc{color:#6ff0a4}.sr em.tc,.t-com{color:#cfd5db}
+#nfsc{font:700 22px 'Press Start 2P',monospace;margin-top:6px}#nfpc,#nfup{font-size:12px}
+
+input[type=password]{width:100%;background:#020202;border:1px solid var(--ln);border-radius:10px;color:#fff;padding:13px;font:13px var(--m);margin:6px 0 4px}
+.mono{font-family:var(--m);word-break:break-all}
+.note{border:1px solid rgba(255,200,70,.45);background:rgba(255,200,70,.07);border-radius:12px;padding:12px 14px;font:12px/1.6 var(--m);color:#e9ecef;margin:0 0 16px}.note b{color:#ffc846;letter-spacing:.12em}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0}.gr div{border:1px solid var(--ln);border-radius:10px;padding:10px 12px;background:#020202}.gr small{display:block;font:10px var(--m);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}.gr b{display:block;font:500 15px var(--m);color:#fff;margin-top:2px;word-break:break-all}
+#mx{white-space:pre-wrap;color:var(--cy)}.blk{cursor:pointer}.blk:hover em{color:#fff}
+#eres{font:12px/1.7 var(--m);color:#d7dce1;word-break:break-all}#smsg,#wmsg,#mmsg{font:12px/1.6 var(--m);word-break:break-all}
+input[type=text],input[type=password]{font-size:16px}
+.btn:disabled{opacity:.5;cursor:wait}
+
+:root{--cy:#ece8de;--pu:#ffffff;--bl:#8d8a82}
+body{background-image:radial-gradient(70vmax 50vmax at 50% -8%,rgba(236,232,222,.24),transparent 60%),radial-gradient(70vmax 40vmax at 100% 110%,rgba(236,232,222,.10),transparent 60%),radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:auto,auto,26px 26px}
+#sp{background:radial-gradient(circle,rgba(236,232,222,.2),transparent 65%)}
+.btn.f{background:linear-gradient(135deg,#ffffff,#ece8de 55%,#8d8a82);color:#1a0f00;font-weight:700;box-shadow:0 0 0 0 rgba(236,232,222,.5);animation:gl 2.6s ease-in-out infinite}
+@keyframes gl{50%{box-shadow:0 0 28px 2px rgba(236,232,222,.45)}}
+.tkt{box-shadow:0 0 0 1px rgba(236,232,222,.07),0 18px 50px rgba(0,0,0,.45)}.th b{color:#ffffff}
+nav .lo{color:#ece8de}
+.cs{display:flex;overflow-x:auto;padding:12px 4px 20px;scrollbar-width:none}.cs::-webkit-scrollbar{display:none}
+.cb2{flex:none;min-width:132px;margin-right:22px;border:1px solid rgba(236,232,222,.5);background:linear-gradient(180deg,rgba(236,232,222,.14),rgba(0,0,0,.55));border-radius:12px;padding:10px 12px;font:10px var(--m);position:relative;display:grid;gap:3px;animation:bfl 4s ease-in-out infinite}
+.cb2 b{font:700 14px var(--m);color:#ece8de}.cb2 span{color:#e9ecef;font-size:11px}.cb2 small{color:var(--mu);font-size:10px}
+.cb2::after{content:"";position:absolute;left:100%;top:50%;width:22px;height:3px;margin-top:-1px;background:repeating-linear-gradient(90deg,#ece8de 0 6px,transparent 6px 10px);background-size:20px 3px;animation:lk .8s linear infinite}
+.cb2.pend{border-style:dashed;margin-right:0;animation:pd 1.4s ease-in-out infinite}.cb2.pend::after{display:none}.cb2.new{animation:sli .9s cubic-bezier(.2,1,.3,1),bfl 4s ease-in-out infinite}
+@keyframes lk{to{background-position:20px 0}}@keyframes bfl{50%{box-shadow:0 0 22px rgba(236,232,222,.3);transform:translateY(-3px)}}@keyframes pd{50%{background:rgba(236,232,222,.2)}}@keyframes sli{from{transform:translateX(60px);opacity:0}}
+.gauge{position:relative;width:150px;height:150px;margin:6px auto 16px}.gauge i{position:absolute;inset:0;border-radius:50%;border:2px dashed rgba(236,232,222,.35)}.gauge i:nth-child(2){inset:12px;border-style:solid;border-color:rgba(236,232,222,.15) rgba(236,232,222,.8) rgba(236,232,222,.15) rgba(236,232,222,.15)}.gauge i:nth-child(3){inset:26px;border-color:rgba(255,208,138,.3);border-style:dotted}
+.gauge.on i:nth-child(1){animation:spin 8s linear infinite}.gauge.on i:nth-child(2){animation:spin 1.6s linear infinite}.gauge.on i:nth-child(3){animation:spin 3s linear infinite reverse}.gauge.on{filter:drop-shadow(0 0 16px rgba(236,232,222,.55))}
+.gauge div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.gauge b{font:700 22px var(--m);color:#ece8de}.gauge small{font:10px var(--m);letter-spacing:.2em;color:var(--mu)}
+#bf{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%) scale(.6);z-index:20;pointer-events:none;text-align:center;opacity:0}#bf b{display:block;font:700 clamp(24px,8vw,40px) var(--m);color:#ece8de;letter-spacing:.06em;text-shadow:0 0 30px rgba(236,232,222,.9)}#bf span{font:600 18px var(--m);color:#fff}
+#bf.on{animation:bfa 2.2s cubic-bezier(.2,1,.3,1) forwards}@keyframes bfa{15%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}75%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-80%) scale(1)}}
+</style><style>#nodeb{position:fixed;left:12px;bottom:12px;z-index:60;font:600 11px/1 monospace;letter-spacing:.08em;padding:8px 12px;border:1px solid rgba(236,232,222,.45);border-radius:99px;background:rgba(10,6,0,.88);color:#ffffff;display:flex;gap:8px;align-items:center}#nodeb i{width:8px;height:8px;border-radius:50%}textarea{width:100%;background:#020202;border:1px solid var(--ln);border-radius:10px;color:#fff;padding:13px;font:16px var(--m);margin:6px 0 4px;resize:vertical}
+.pw{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}.pw span{border:1px solid rgba(236,232,222,.4);border-radius:8px;padding:8px 6px;font:13px var(--m);color:#fff;background:#0b0600;text-align:center}.pw i{font-style:normal;color:#ece8de;margin-right:6px;font-size:10px}
+.sr a.tb{display:inline-block;margin-top:6px;color:#1a0f00;background:linear-gradient(135deg,#ffffff,#ece8de);border-radius:99px;padding:6px 12px;font:700 11px var(--m);letter-spacing:.08em;text-decoration:none}
+.bl{color:#3ddc84!important}
+
+/* ===== CLASSIC BLACK THEME ===== */
+:root{--bg:#000;--p:#060606;--ln:rgba(255,255,255,.13);--mu:#9c9a93;--cy:#ece8de;--pu:#fff;--bl:#8d8a82;--px:'Space Grotesk',sans-serif;--serif:'Playfair Display','Cormorant Garamond',Georgia,'Times New Roman',serif}
+html,body{background:#000}
+body{font:16px/1.65 'Space Grotesk',sans-serif;color:#ece8de;background-image:none}
+body::before{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:0;background:radial-gradient(42vmax 42vmax at 18% 14%,rgba(255,255,255,.075),transparent 62%),radial-gradient(46vmax 46vmax at 86% 82%,rgba(255,255,255,.055),transparent 62%);animation:kdrift 24s ease-in-out infinite alternate}
+@keyframes kdrift{to{transform:translate3d(7%,5%,0) scale(1.1)}}
+body::after{opacity:.05}
+#scan,#em,#fl,#cr2,.hud,.cmd,.boot,#ld .bt{display:none!important}
+.tkt::before,.ft::before{display:none!important}
+.tkt,.ft{padding:24px 20px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.03),0 24px 60px rgba(0,0,0,.6)}
+.gl::before,.gl::after{display:none}
+h1,h2,.out,#pt,#nfsc,nav .lo{font-family:var(--serif);text-transform:none}
+h1{font-size:clamp(40px,12vw,68px);line-height:1.08;letter-spacing:-.01em;text-align:center;margin:10px 0 18px;font-weight:700}
+h1 .ch:first-child,h1 .ch+br+.g+br+.ch{font-size:.4em;font-weight:500;font-style:italic;letter-spacing:.04em}
+h1 .g{letter-spacing:.03em}
+h1 .cur{display:none}
+h2{font-size:clamp(26px,7vw,36px);line-height:1.18;letter-spacing:-.01em;font-weight:700;text-align:left}
+h2::before{content:none}
+.out{font-size:clamp(26px,7vw,34px);line-height:1.2}
+#pt,#nfsc{font-size:24px;font-weight:700}
+.lead{text-align:center;font-family:'Space Grotesk',sans-serif;color:var(--mu)}
+.ey{font-family:'Space Grotesk',sans-serif;letter-spacing:.28em;text-align:center}
+#tokenomics .lead,#whitepaper .lead,.w>.lead[style*="left"]{text-align:left}
+details p,.rm span,.m{font-family:'Space Grotesk',sans-serif}
+nav{background:rgba(0,0,0,.82)}
+nav .lo{font-size:15px;letter-spacing:.14em;font-weight:700;color:#ece8de}
+nav a{letter-spacing:.16em}
+.btn,.chips button,.qc button,input[type=text],input[type=password]{border-radius:2px}
+.btn{letter-spacing:.16em;transition:transform .25s,box-shadow .25s,border-color .25s,background .25s}
+.btn:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn.f{background:linear-gradient(135deg,#fff,#d9d4c7 55%,#f4f1ea);color:#000;font-weight:700;border:0}
+.btn.f:hover{background:linear-gradient(135deg,#fff,#e6e1d4 55%,#fff);box-shadow:0 0 34px rgba(255,255,255,.28)}
+.btn.f::after{background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.7) 50%,transparent 60%)}
+.tkt:hover,.bn:hover{box-shadow:0 0 60px rgba(255,255,255,.09)}
+#sp{background:radial-gradient(circle,rgba(255,255,255,.07),transparent 65%)}
+#pg{background:linear-gradient(90deg,#4b4943,#ece8de,#fff)}
+.th b{color:#fff}
+.chips button.on{box-shadow:0 0 18px rgba(255,255,255,.2)}
+/* black-on-black animated glow behind the hero */
+#home{overflow:hidden}
+#home>.w{position:relative;z-index:1}
+#home::before{content:"";position:absolute;left:50%;top:-6%;width:95vmin;height:95vmin;margin-left:-47.5vmin;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.11),transparent 62%);animation:kbreathe 7s ease-in-out infinite;pointer-events:none}
+@keyframes kbreathe{50%{transform:scale(1.16);opacity:.5}}
+#home h1 .g{animation:sh 7s linear infinite}
+.lr b,.lr span{transition:color .3s}
+.lr:hover b{color:#fff}
+/* loader: simple elegant fade, no spinning */
+#ld{animation:ldo .6s 1.3s forwards}
+#ld svg{width:120px;filter:drop-shadow(0 0 22px rgba(255,255,255,.3));animation:kldin 1s ease both}
+@keyframes kldin{from{opacity:0;transform:scale(.9)}}
+@media (prefers-reduced-motion:reduce){body::before,#home::before{animation:none}}
+</style><style id="v21">
+#sprog{position:fixed;left:0;top:0;height:2px;width:100%;z-index:100;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#555,#fff,#555)}
+#aur{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}#aur i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);background:radial-gradient(circle,rgba(190,198,208,.10),transparent 65%);animation:dr 26s ease-in-out infinite alternate}
+#aur i:nth-child(1){left:-15vmax;top:-10vmax}#aur i:nth-child(2){right:-20vmax;top:35vh;animation-duration:34s;animation-delay:-9s}#aur i:nth-child(3){left:20vw;bottom:-30vmax;animation-duration:40s;animation-delay:-18s;opacity:.7}
+@keyframes dr{to{transform:translate(9vmax,6vmax) scale(1.18)}}
+.tkt,details{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),rgba(255,255,255,.075),transparent 62%)}
+.sr,.cb2{transition:background .25s,transform .25s}.sr:hover{background:rgba(255,255,255,.03)}.cb2:hover{transform:translateY(-3px)}
+nav a{position:relative}nav a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:#fff;transform:scaleX(0);transition:transform .3s}nav a.act{color:#fff}nav a.act::after,nav a:hover::after{transform:scaleX(1)}
+.rp{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rpl .6s ease-out forwards;pointer-events:none}@keyframes rpl{to{transform:scale(1);opacity:0}}
+.bx{position:relative;margin-top:16px;border:1px solid var(--ln);border-radius:14px;background:#050505;padding:14px;overflow:hidden;font:11.5px/1.5 var(--m)}
+.bx::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(255,255,255,.04) 50%,transparent);height:40%;animation:bsc 3.2s linear infinite;pointer-events:none}@keyframes bsc{from{transform:translateY(-100%)}to{transform:translateY(300%)}}
+.bx.idle::before{display:none}.bx.idle .bx-log{opacity:.35}
+.bx-h{display:flex;justify-content:space-between;color:var(--mu);letter-spacing:.14em;margin-bottom:8px}.bx-h b{color:#fff;font-weight:500}.bx-h i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#444;margin-right:7px}.bx:not(.idle) .bx-h i{background:#fff;box-shadow:0 0 10px #fff;animation:bl 1s infinite}@keyframes bl{50%{opacity:.25}}
+.bx-r{display:flex;gap:10px;border-bottom:1px dotted #2a2a2a;padding:3px 0}.bx-r span{width:62px;flex:none;color:var(--mu)}.bx-r code{color:#dfe3e7;word-break:break-all;font:inherit}
+.bx-t{margin:10px 0 6px;color:var(--mu)}.bx-t code{display:block;word-break:break-all;color:#7b8087;font:inherit}.bx u,.bx-t u{text-decoration:none;color:#fff;text-shadow:0 0 8px rgba(255,255,255,.6)}
+.bx-bar{position:relative;height:18px;border:1px solid var(--ln);border-radius:9px;overflow:hidden;margin:8px 0}.bx-bar i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,#333,#fff);transition:width .25s}.bx-bar span{position:absolute;inset:0;display:grid;place-items:center;mix-blend-mode:difference;color:#fff;letter-spacing:.08em}
+.bx-st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.bx-st div{border:1px solid var(--ln);border-radius:9px;padding:7px 8px}.bx-st small{display:block;color:var(--mu);letter-spacing:.1em;text-transform:uppercase;font-size:9.5px}.bx-st b{color:#fff;font-weight:500;font-size:13px}
+#bxc{width:100%;height:64px;display:block;margin:6px 0}
+.bx-log{height:132px;overflow:hidden;color:#6d737a;white-space:nowrap;mask-image:linear-gradient(180deg,#000 55%,transparent)}.bx-log div{overflow:hidden;text-overflow:clip;animation:lg .25s ease-out}.bx-log em{font-style:normal;color:#4a4f55;margin-right:8px}@keyframes lg{from{opacity:0;transform:translateY(-6px)}}
+.bx-f{position:absolute;inset:0;background:rgba(0,0,0,.93);display:grid;place-content:center;text-align:center;gap:8px;padding:16px;opacity:0;visibility:hidden;transition:opacity .4s}.bx-f.on{visibility:visible;animation:fnd 4.2s forwards}.bx-f b{font:700 22px 'Space Grotesk';letter-spacing:.14em;color:#fff;text-shadow:0 0 24px #fff}.bx-f code{font:11px var(--m);word-break:break-all;color:#8b9096}@keyframes fnd{8%,82%{opacity:1}100%{opacity:0;visibility:hidden}}
+@media(max-width:420px){.bx-st{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){#aur i,.bx::before{animation:none}}
+</style>
+<style>.cpum{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px;font:11px var(--m);color:var(--mu);letter-spacing:.1em}.cpum button{font:inherit;color:#cfd5db;background:transparent;border:1px solid var(--ln);border-radius:99px;padding:7px 12px;cursor:pointer;transition:.2s}.cpum button.on{background:#e9ecef;color:#050505;border-color:#e9ecef}.cpum button:hover{border-color:#777}</style><style>nav .lo svg{width:30px;height:30px;filter:drop-shadow(0 0 8px rgba(255,255,255,.35))}</style></head><body><script>try{if(sessionStorage.getItem("mirt"))document.documentElement.classList.add("sk");sessionStorage.setItem("mirt","1")}catch(e){}</script>
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="cr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6f8fa"/><stop offset=".3" stop-color="#7d848b"/><stop offset=".55" stop-color="#2b2f33"/><stop offset=".8" stop-color="#a3aab0"/><stop offset="1" stop-color="#e9ecef"/></linearGradient>
+<radialGradient id="cf" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#555a60"/><stop offset=".7" stop-color="#26292d"/><stop offset="1" stop-color="#141618"/></radialGradient>
+<linearGradient id="mg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f8f9"/><stop offset=".55" stop-color="#a7adb2"/><stop offset="1" stop-color="#e2e5e8"/></linearGradient>
+<pattern id="sl" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".4"/></pattern>
+<symbol id="mc" viewBox="0 0 200 200"><image width="200" height="200" href="data:image/webp;base64,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"/></symbol></defs></svg>
+<div id="ld"><svg viewBox="0 0 200 200"><use href="#mc"/></svg><div class="bt"><p>&gt; BOOTING MIRT_SUPERCOMPUTER v7.2</p><p>&gt; NEURAL CORE ........ ONLINE</p><p>&gt; MIRT CHAIN SYNC ..... OK</p><p>&gt; TARGET ACQUIRED. WELCOME.</p></div></div><div id="scan"></div><canvas id="fx"></canvas><div id="fl"></div><div id="cr2"></div><div id="pg"></div><canvas id="em"></canvas><div id="sp"></div>
+<div class="tk"><div id="tk"></div></div>
+<nav><span class="lo"><svg viewBox="0 0 200 200"><use href="#mc"/></svg>MIRTCOIN</span><a href="#wallet">WALLET</a><a href="#mine">MINE</a><a href="#explorer">EXPLORER</a><a href="#liquidity">LIQUIDITY</a><a href="#exchanges">EXCHANGES</a><a href="#tokenomics">TOKENOMICS</a><a href="#whitepaper">WHITEPAPER</a><a href="#roadmap">ROADMAP</a><a href="#faq">FAQ</a><a href="https://wa.me/8801825245102" target="_blank" rel="noopener">WHATSAPP</a></nav>
+
+<section id="home" style="padding-top:64px"><div class="w">
+<div id="orb" hidden><div id="s3"></div></div>
+<p class="boot">&gt; INCOMING CONNECTION ...</p>
+<p class="ey">Proof of Work &middot; Season 0 &middot; Mainnet</p>
+<h1><span class="ch">Meet</span><br><span class="g gl" data-t="MIRTCOIN">MIRTCOIN</span><br><span class="ch" style="opacity:.75">mine it<span class="cur">_</span></span></h1>
+<p class="lead">MirtCoin ($MIRT) is a Bitcoin-style blockchain: SHA-256 mining, signed transactions, halving rewards and a hard cap of 27,000,000. Create a wallet, mine blocks and send MIRT.</p>
+<p class="cmd">$ <span id="cm"></span><span class="cur">&#9608;</span></p>
+<div class="btns" style="margin-bottom:34px"><a class="btn f" href="#mine">Start mining</a><a class="btn" href="#wallet">Open wallet</a></div>
+<div class="hud" id="hud"><span>CPU <b>99</b>%</span><span>NEURAL <b>87</b>%</span><span>BLOCKS <b id="hh">0</b></span><span>THREAT <b>00</b>%</span></div>
+<div class="cdw" id="cd"><div><b>00</b><small>DAYS</small></div><div><b>00</b><small>HRS</small></div><div><b>00</b><small>MIN</small></div><div><b>00</b><small>SEC</small></div></div>
+<div class="lr"><span>Consensus</span><i></i><b>Proof of Work</b></div><div class="lr"><span>Block time</span><i></i><b>~2 min</b></div><div class="lr"><span>Max supply</span><i></i><b data-n="18000000">27,000,000</b></div></div></section>
+
+<section id="chain" style="padding:6px 0 22px"><div class="w"><p class="ey" style="text-align:left">Live chain</p><div class="cs" id="cstrip"></div></div></section>
+
+<section id="wallet"><div class="w"><p class="ey" style="text-align:left">01 &middot; Wallet</p><h2 class="rv">MIRT <span class="g">wallet</span></h2>
+<div class="note rv"><b>MAINNET LIVE.</b> Everyone on this site shares one public chain, validated by the MirtCoin node. Your wallet keys are created in your browser and never leave it. Coins have no guaranteed value.</div>
+<div class="tkt rv"><div class="th"><span>Founder wallets<b>Public &middot; visible to all</b></span><span style="text-align:right">Genesis<b id="gh">-</b></span></div>
+<div class="sr"><div>Creator wallet<small class="mono" id="fa1"></small></div><em class="c" id="fb1">-</em></div>
+<div class="sr"><div>Reserve wallet<small class="mono" id="fa2"></small></div><em class="c" id="fb2">-</em></div></div>
+<div class="tkt rv" id="login"><div class="th"><span>Access<b>Recovery phrase</b></span><span style="text-align:right">Key<b>Stays on this device</b></span></div>
+<label for="wph" style="margin-top:0">Recovery phrase (24 words)</label><textarea id="wph" rows="3" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="word1 word2 word3 ... word24"></textarea>
+<div class="btns" style="justify-content:flex-start;margin-top:14px"><button class="btn f" id="wlp" type="button">Open wallet</button><button class="btn" id="wc" type="button">Create new wallet</button></div>
+<div id="phbox" style="display:none"><label>Your new recovery phrase</label><div class="pw" id="phw"></div>
+<div class="note" style="margin:12px 0"><b>WRITE THIS DOWN NOW.</b> These 24 words are your wallet. Anyone who has them can take your coins, and nobody, including the MirtCoin team, can recover them if you lose them.</div>
+<div class="btns" style="justify-content:flex-start"><button class="btn" id="phcp" type="button">Copy words</button></div>
+<label style="display:flex;gap:10px;align-items:center;text-transform:none;letter-spacing:0;margin-top:14px"><input type="checkbox" id="phck" style="width:auto;margin:0"> I saved all 24 words somewhere safe</label>
+<button class="btn f" id="phok" type="button" style="width:100%;margin-top:12px">Open my new wallet</button></div>
+<details class="fqo" style="margin-top:16px"><summary style="cursor:pointer;font:12px var(--m);color:var(--mu)">Username + password login (founder wallets)</summary>
+<label for="wu">Username</label><input type="text" id="wu" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="username">
+<label for="wp">Password</label><input type="password" id="wp" autocomplete="current-password" placeholder="password">
+<button class="btn" id="wl" type="button" style="margin-top:12px">Login</button></details>
+<div class="rules"><span>&bull; Your private key is made on your own device from your 24 words and is never sent anywhere. The MirtCoin node only ever sees signed transactions.</span><span id="wmsg"></span></div></div>
+<div class="tkt v4w" id="acct" style="display:none">
+<div class="v4wh"><svg viewBox="0 0 200 200"><use href="#mc"/></svg><div><b>MirtCoin Wallet</b><small>UTXO &middot; secp256k1 &middot; Base58Check</small></div><span class="v4net"><i></i>MAINNET</span></div>
+<div class="v4bal"><small>Available balance</small><div class="big"><span id="ab">0</span></div>
+<div class="v4mn"><div><small class="v4s">Account</small><b id="au">-</b></div><div><small class="v4s">Height</small><b id="v4h">-</b></div><div><small class="v4s">Mempool</small><b id="v4m">0</b></div></div></div>
+<div class="v4tabs" id="v4tabs"><button type="button" data-t="ov" class="on">Overview</button><button type="button" data-t="send">Send</button><button type="button" data-t="recv">Receive</button><button type="button" data-t="tx">History</button></div>
+<div class="v4p on" data-p="ov">
+<div class="v4qa"><button type="button" data-go="send"><b>&uarr;</b>Send</button><button type="button" data-go="recv"><b>&darr;</b>Receive</button><button type="button" data-go="mine"><b>&#9874;</b>Mine</button></div>
+<label style="margin-top:0">Your wallet address</label><div class="addr" id="aad"></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn" id="acp" type="button">Copy address</button><button class="btn" id="alo" type="button">Lock &amp; logout</button></div></div>
+<div class="v4p" data-p="send">
+<label for="st" style="margin-top:0">Pay to</label><div class="v4in"><input type="text" id="st" placeholder="M..." autocomplete="off" spellcheck="false"><button class="v4ps" id="v4ps" type="button">PASTE</button></div><div class="v4ok" id="v4ok"></div>
+<label for="sa">Amount (MIRT)</label><div class="v4in"><input type="text" id="sa" inputmode="decimal" placeholder="0.00" autocomplete="off"><button class="v4mx" id="v4mx" type="button">MAX</button></div>
+<label for="sf">Network fee (MIRT)</label><input type="text" id="sf" inputmode="decimal" value="0.001" autocomplete="off">
+<div class="v4fee" id="v4fee"><button type="button" data-f="0.0001">Low<small>0.0001</small></button><button type="button" data-f="0.001" class="on">Normal<small>0.001</small></button><button type="button" data-f="0.005">Priority<small>0.005</small></button></div>
+<div class="v4sum"><span>Total to be deducted</span><b id="v4tot">0 MIRT</b></div>
+<button class="btn f" id="ss" type="button" style="width:100%;margin-top:14px">Sign &amp; send MIRT</button><div class="pnote" id="smsg"></div></div>
+<div class="v4p" data-p="recv">
+<div class="v4qrw"><div class="v4qrc"><canvas id="v4qr" width="210" height="210"></canvas><svg viewBox="0 0 200 200"><use href="#mc"/></svg></div></div>
+<label style="margin-top:0">Receive address</label><div class="addr" id="v4ra"></div>
+<label for="v4rq">Request amount (optional)</label><input type="text" id="v4rq" inputmode="decimal" placeholder="0.00" autocomplete="off"><div class="v4ok" id="v4qn">QR contains the plain address.</div>
+<div class="btns" style="justify-content:flex-start"><button class="btn f" id="v4cp2" type="button">Copy address</button></div></div>
+<div class="v4p" data-p="tx"><div id="ah"></div></div>
+<div class="v4sb"><span><b>&#9679;</b> Synced &middot; block <span id="v4sh">-</span></span><span>Keys never leave this device</span></div>
+</div></div></section>
+
+<section id="mine"><div class="w"><p class="ey" style="text-align:left">02 &middot; Mining</p><h2 class="rv">Proof of <span class="g">Work</span></h2>
+<p class="lead rv" style="text-align:left;margin:0 0 20px">Same design as Bitcoin: double SHA-256, a nonce search, a difficulty that retargets every 10 blocks, and a reward that halves. Rewards go to the wallet you are logged in with.</p>
+<div class="tkt rv"><div class="th"><span>Miner<b id="ms">Idle</b></span><span style="text-align:right">Hashrate<b id="mh">0 H/s</b></span></div>
+<div class="gauge" id="mg"><i></i><i></i><i></i><div><b id="mgh">0</b><small>H/s</small></div></div>
+<div class="gr"><div><small>Difficulty</small><b id="md">-</b></div><div><small>Block reward</small><b id="mr">-</b></div><div><small>Next block</small><b id="mn">-</b></div><div><small>Mempool</small><b id="mp">0</b></div><div><small>Work per block</small><b id="mw">-</b></div><div><small>Est. time / block</small><b id="mt">-</b></div></div>
+<div class="addr" id="mx" style="margin-top:14px;min-height:42px">nonce 0</div>
+<div class="btns" style="justify-content:flex-start"><button class="btn f" id="mgo" type="button">Start mining</button></div>
+<div class="pnote" id="mmsg">Login to a wallet first, then press start.</div>
+<div class="cpum" id="cpu"><span>CPU MODE</span><button type="button" data-m="cool" class="on">Cool &middot; 25%</button><button type="button" data-m="bal">Balanced &middot; 50%</button><button type="button" data-m="max">Turbo &middot; 100%</button></div><div class="pnote" id="pwn">Cool mode: laptop thanda thake. Tab background e gele mining nijei slow hoye jay.</div><div class="bx idle" id="bx"><div class="bx-h"><span><i></i>BLOCK TEMPLATE</span><b id="bxh">#-</b></div><div id="bxhdr"><div class="bx-r"><span>status</span><code>idle - press Start mining</code></div></div><div class="bx-t">TARGET (hash must be below)<code id="bxt">-</code></div><div class="bx-bar"><i id="bxbar"></i><span id="bxbt">best 0 / - bits</span></div><div class="bx-st"><div><small>Work this block</small><b id="bxw">0</b></div><div><small>Total hashes</small><b id="bxa">0</b></div><div><small>Blocks found</small><b id="bxn">0</b></div></div><canvas id="bxc"></canvas><div class="bx-log" id="bxlog"></div><div class="bx-f" id="bxf"></div></div><div class="rules"><span>&bull; Target is one block every 2 minutes. Every 10 blocks the difficulty moves up or down to hold that pace, and it never drops below 22 bits.</span><span>&bull; Reward starts at 7.5 MIRT and halves every 1,650,000 blocks.</span></div></div></div></section>
+
+<section id="explorer"><div class="w"><p class="ey" style="text-align:left">03 &middot; Explorer</p><h2 class="rv">Block <span class="g">explorer</span></h2>
+<div class="tkt rv"><div class="th"><span>Chain<b id="eh">Height 0</b></span><span style="text-align:right">Max supply<b>27,000,000</b></span></div>
+<div class="gr"><div><small>Circulating</small><b id="es">-</b></div><div><small>Mined so far</small><b id="em">-</b></div><div><small>Next halving</small><b id="ehv">-</b></div><div><small>Tip hash</small><b id="et" class="mono" style="font-size:11px">-</b></div></div>
+<div class="stack" id="supbar"><i style="background:#cfd5db" id="sb1"></i><i style="background:#6f767d" id="sb2"></i></div>
+<label for="eq">Search address, block number or tx id</label><input type="text" id="eq" placeholder="M... / 12 / txid" autocomplete="off" spellcheck="false"><div class="pnote" id="eres"></div>
+<label>Latest blocks</label><div id="blks"></div>
+<label>Rich list</label><div id="rich"></div><div class="btns" style="justify-content:flex-start;margin-top:14px"><button class="btn" id="rstc" type="button">Resync from node</button></div></div></div></section>
+
+
+<section id="liquidity"><div class="w"><p class="ey" style="text-align:left">05 &middot; Liquidity</p><h2 class="rv">Liquidity &amp; <span class="g">proof</span></h2>
+<p class="lead rv" style="text-align:left;margin:0 0 20px">MIRT is a native coin on its own chain. To trade it on a DEX, a wrapped token (wMIRT) must be backed 1:1 by MIRT held in the public reserve wallet. Every line below is meant to be checked, not trusted.</p>
+<div class="tkt rv"><div class="th"><span>Public record<b>Check it yourself</b></span><span style="text-align:right">Status<b id="lqs">Not live yet</b></span></div>
+<div class="sr"><div>Native chain<small>MIRT mainnet &middot; Proof of Work &middot; max 27,000,000</small></div><em class="c">LIVE</em></div>
+<div class="sr"><div>Backing reserve (live)<small class="mono" id="lqa"></small></div><em class="c" id="lqb">-</em></div>
+<div class="sr"><div>wMIRT token<small id="lqcn">BNB Chain (BEP-20)</small><small class="mono" id="lqc"></small></div><em id="lqct">Not deployed</em></div>
+<div class="sr"><div>Trading pool<small>wMIRT / USDT</small></div><em id="lqp">Not created</em></div>
+<div class="sr"><div>USDT in the pool<small>Paid in by the team</small></div><em id="lqu">-</em></div>
+<div class="sr"><div>Liquidity lock / burn proof<small>Link to the on-chain record</small></div><em id="lqk">Not locked</em></div>
+<div class="rules"><span>&bull; The total of wMIRT in circulation must never be higher than the MIRT held in the backing reserve above.</span><span>&bull; Until the rows above show real links, there is no DEX trading and nothing is for sale here.</span><span>&bull; Prices can go to zero. Not financial advice.</span></div></div></div></section>
+
+<section id="exchanges"><div class="w"><p class="ey" style="text-align:left">06 &middot; Exchanges</p><h2 class="rv">Where MIRT <span class="g">trades</span></h2>
+<p class="lead rv" style="text-align:left;margin:0 0 20px">A listing shows up here only when it is real and has a working link. When a listing time is set, the card counts down and turns LIVE by itself.</p>
+<div class="tkt rv"><div class="th"><span>Listings<b>Verified links only</b></span><span style="text-align:right">Status<b id="exs">No listings</b></span></div><div id="exl"></div></div></div></section>
+
+<section id="tokenomics"><div class="w"><p class="ey" style="text-align:left">07 &middot; Tokenomics</p><h2 class="rv">Tokenomics</h2><p class="lead" style="text-align:left;margin:0">27,000,000 MIRT maximum supply</p><div class="stack" id="stack"></div><div id="leg"></div><p class="pnote" style="margin-top:14px">Founder allocations are in the genesis block and visible to everyone. The other 24,750,000 MIRT can only be created by mining.</p></div></section>
+
+<section id="whitepaper"><div class="w"><p class="ey" style="text-align:left">08 &middot; Whitepaper</p><h2 class="rv">Whitepaper <span class="g">v1.0</span></h2><p class="lead rv" style="text-align:left;margin:0 0 16px">Everything that is live, planned and risky, in plain words.</p><div class="btns rv" style="justify-content:flex-start;margin-bottom:16px"><a class="btn f" href="whitepaper.pdf" target="_blank" rel="noopener">Download PDF</a></div><details><summary>1. Abstract</summary><p>MirtCoin (MIRT) is a Bitcoin-style Proof-of-Work blockchain with a fixed maximum supply of 27,000,000 MIRT. New coins are created only by mining, coins move by digitally signed transactions, and every block is verified again inside each user's own browser.</p><p>This paper describes exactly what exists today, what is planned, and what the risks are. Anything not described as live is not live.</p></details><details><summary>2. How the chain works</summary><p>Blocks. Each block header holds the previous block hash, a merkle root of the transactions, a timestamp, the difficulty in bits and a nonce. The header is hashed with double SHA-256, the same hash construction Bitcoin uses.</p><p>Mining. A block is valid only if its hash begins with at least the required number of zero bits. Miners change the nonce until they find such a hash. The first valid block extends the chain and pays the block reward to the miner.</p><p>Transactions. MirtCoin uses the UTXO model like Bitcoin. A transaction spends earlier outputs and creates new ones. Each input is signed with secp256k1 ECDSA, the same curve Bitcoin uses, so nobody can spend coins without the private key.</p><p>Addresses. Addresses are Base58Check encoded with a checksum and start with the letter M, so a mistyped address is rejected.</p></details><details><summary>3. Supply and emission</summary><p>Maximum supply: 27,000,000 MIRT. This is enforced by the block rules, not by a promise.</p><p>Genesis allocation: 2,250,000 MIRT (8.33 percent of the maximum) exists from block zero. 1,500,000 MIRT is in the creator wallet and 750,000 MIRT is in the reserve wallet. Both addresses are public and visible in the explorer.</p><p>Mineable supply: 24,750,000 MIRT. The block reward starts at 7.5 MIRT and halves every 1,650,000 blocks. At the target block time of 2 minutes this is about 5,400 MIRT per day, and the first halving comes after roughly 6.3 years.</p></details><details><summary>4. Difficulty</summary><p>The chain starts at a difficulty of 24 bits, which needs about 16.8 million hashes on average per block. Every 10 blocks the network compares the real time taken with the target of 120 seconds per block and moves the difficulty by up to 2 bits (a factor of 4). Difficulty never goes below 22 bits.</p></details><details><summary>5. Wallets</summary><p>New wallets are created from a 24-word recovery phrase. The private key is computed on the user's own device and is never sent to the node. The node only sees signed transactions.</p><p>The recovery phrase uses MirtCoin's own word list and checksum. It is not BIP39, so it cannot be imported into other wallets. Anyone who has the 24 words controls the coins, and nobody, including the team, can recover a lost phrase.</p><p>The two founder wallets use username and password login from an earlier version. Their funds are meant to be moved to recovery-phrase wallets before the public launch.</p></details><details><summary>6. Network today</summary><p>Today one official MirtCoin node keeps and serves the shared chain. Browsers download every block from it and check all rules themselves, so the node cannot create coins or spend other people's coins.</p><p>It is still one node. If it is offline, nobody can mine or send until it returns, and it could stop relaying someone's transactions. Peer-to-peer syncing between many nodes is the next engineering step and is not live.</p></details><details><summary>7. wMIRT and liquidity</summary><p>To trade MIRT on a decentralised exchange, a wrapped token called wMIRT can be created on BNB Chain. The rule is simple: the amount of wMIRT in circulation must never be higher than the MIRT held in the public reserve wallet.</p><p>The Liquidity section of the website shows the live reserve balance, the wMIRT contract, the trading pool, the USDT paired in the pool and the proof that the pool tokens are locked or burned. Until those rows show real links, there is no DEX trading.</p></details><details><summary>8. Exchanges</summary><p>No exchange has agreed to list MIRT at the time of writing. The Exchanges section of the website only shows a listing once it is real and has a working link. A listing is never guaranteed.</p></details><details><summary>9. Risks</summary><p>MIRT may have no value, and you can lose everything you put in. Nothing here is financial advice or a promise of profit.</p><p>The software has not had an independent security audit and may contain bugs.</p><p>One node means centralisation and availability risk, as explained above.</p><p>Losing your 24 words means losing your coins permanently.</p><p>Browser mining is slow compared with specialised hardware, so early mining is open to everyone but not efficient.</p><p>Laws about crypto assets differ by country and can change. Check the rules where you live before you buy, sell or mine.</p></details><details><summary>10. Reference data</summary><p class="mono">Genesis block hash: 94bca64c14e794122177e1b515124aba42261eeed35e69cc27679fc454d27e30</p><p class="mono">Creator wallet: MJVmaN7EDd3yCyBVJPSMLFuif1CWQdDV3G</p><p class="mono">Reserve wallet: MUjpdU53kecUVrji7df8stDMFjvE9n8mUq</p><p>Hash: double SHA-256. Signatures: secp256k1 ECDSA. Target block time: 120 seconds. Retarget: every 10 blocks. Start difficulty: 24 bits. Block reward: 7.5 MIRT. Halving: every 1,650,000 blocks. Max supply: 27,000,000 MIRT.</p></details></div></section>
+
+<section id="roadmap"><div class="w"><p class="ey" style="text-align:left">09 &middot; Roadmap</p><h2 class="rv">Roadmap</h2><div class="rm" id="rm">
+<div><small>DONE</small><b>Phase 1 &middot; Genesis</b><span>Genesis block, founder wallets, signed transfers and the block explorer.</span></div>
+<div><small>LIVE</small><b>Phase 2 &middot; Mainnet node</b><span>Official public node. Every visitor mines and sends on one shared chain.</span></div>
+<div><small>NEXT</small><b>Phase 3 &middot; Peer-to-peer nodes</b><span>Node-to-node sync so other people can run nodes and the chain no longer depends on one server.</span></div>
+<div><small>SOON</small><b>Phase 4 &middot; wMIRT &amp; listings</b><span>Wrapped token, public liquidity proof and exchange listings, shown only once they are real.</span></div></div></div></section>
+
+<section id="faq"><div class="w"><p class="ey" style="text-align:left">10 &middot; FAQ</p><h2 class="rv">FAQ</h2>
+<details><summary>Is this a real public blockchain?</summary><p>Yes, it is a live chain with Bitcoin-style rules, and your browser verifies every block it downloads. Right now one official node keeps the shared chain. Other nodes cannot sync with it yet, so it is not decentralised yet.</p></details>
+<details><summary>How does mining work?</summary><p>Your device hashes block headers with double SHA-256 until the result starts with enough zero bits. The first valid hash is a new block and pays the block reward to your wallet.</p></details>
+<details><summary>What is the supply?</summary><p>27,000,000 MIRT maximum. 1,500,000 sit in the creator wallet and 750,000 in the reserve wallet from block zero. The other 24,750,000 are mined, starting at 7.5 per block and halving every 1,650,000 blocks.</p></details>
+<details><summary>How are wallets secured?</summary><p>Your private key is computed from your username and password using PBKDF2, then used for secp256k1 signatures, the same curve as Bitcoin. Nothing is stored. Use a long unique password; if you lose it, the wallet cannot be recovered.</p></details>
+<details><summary>Can others send me tokens?</summary><p>Yes, using your wallet address. Anyone on the mainnet can send MIRT to it.</p></details></div></section>
+
+<footer><div class="ft">THANK YOU &middot; STAY EARLY<br>MirtCoin runs on its own public mainnet. Coins have no guaranteed value. Not financial advice.<br>&copy; 2026 MirtCoin &middot; Proof of Work &middot; <a style="color:var(--cy)" href="https://wa.me/8801825245102" target="_blank" rel="noopener">WhatsApp 01825245102</a><div class="bc"></div></div></footer>
+<div id="nodeb">NODE...</div><div id="bf"></div><div id="toast" role="status"></div>
+<script>
+(function(){const g=id=>document.getElementById(id),R=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const sp=g("sp"),orb=g("orb");let last=-9e3;
+addEventListener("pointermove",e=>{last=performance.now();sp.style.opacity=1;sp.style.translate=e.clientX+"px "+e.clientY+"px";const r=orb.getBoundingClientRect();orb.style.setProperty("--ry",Math.max(-22,Math.min(22,(e.clientX-r.left-r.width/2)/12))+"deg");orb.style.setProperty("--rx",Math.max(-22,Math.min(22,-(e.clientY-r.top-r.height/2)/12))+"deg")},{passive:true});
+if(!R)(function t(n){if(n-last>2500){orb.style.setProperty("--ry",Math.sin(n/1400)*14+"deg");orb.style.setProperty("--rx",Math.cos(n/1800)*8+"deg")}requestAnimationFrame(t)})(0);
+function cnt(e){const n=+e.dataset.n,t0=performance.now();(function s(t){const p=Math.min(1,(t-t0)/1600);e.textContent=Math.round(n*(1-Math.pow(1-p,3))).toLocaleString();if(p<1)requestAnimationFrame(s)})(t0)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;io.unobserve(t);t.classList.add("in");
+if(t.id==="stack")t.querySelectorAll("i").forEach(i=>i.style.width=i.dataset.w+"%");
+if(t.id==="rm"){const d=[...t.children];d.forEach((c,i)=>setTimeout(()=>{c.classList.add("on");t.style.setProperty("--p",(i+1)/d.length*100+"%")},R?0:i*600))}
+if(t.dataset.n&&!R)cnt(t)}),{threshold:.2});
+document.querySelectorAll(".rv,#stack,#rm,[data-n]").forEach((e,i)=>{if(e.classList.contains("rv"))e.style.setProperty("--d",(i%3)*.08+"s");io.observe(e)});
+const LAUNCH="";/* set e.g. "2026-10-20T15:00:00Z" to show a countdown */
+if(LAUNCH){const cd=g("cd"),n=[...cd.querySelectorAll("b")];cd.classList.add("on");(function t(){let d=Math.max(0,new Date(LAUNCH)-Date.now())/1e3;[d/86400,d/3600%24,d/60%60,d%60].forEach((v,i)=>n[i].textContent=String(Math.floor(v)).padStart(2,"0"));setTimeout(t,1000)})()}
+const pg=g("pg");addEventListener("scroll",()=>{pg.style.transform="scaleX("+scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)+")"},{passive:true});
+(function(){const c=g("em"),x=c.getContext("2d"),ch="01MIRT$<>{}[]#%";let W,H,D,t0=0;function rs(){W=c.width=innerWidth;H=c.height=innerHeight;D=Array.from({length:Math.ceil(W/18)},()=>Math.random()*H/18)}rs();addEventListener("resize",rs);
+(function f(n){if(!document.hidden&&n-t0>50){t0=n;x.globalCompositeOperation="destination-out";x.fillStyle="rgba(0,0,0,.09)";x.fillRect(0,0,W,H);x.globalCompositeOperation="source-over";x.font="14px monospace";D.forEach((y,i)=>{x.fillStyle=Math.random()>.97?"#ffe2b0":"#ece8de";x.fillText(ch[Math.random()*ch.length|0],i*18,y*18);D[i]=y*18>H&&Math.random()>.975?0:y+1})}if(!R)requestAnimationFrame(f)})(0)})();
+})();
+</script>
+<script></script><script>(function(){const s3=document.getElementById("s3");for(let z=-10;z<=10;z+=2){const d=document.createElement("span");d.className="ed";d.style.transform="translateZ("+z+"px)";d.style.background=Math.abs(z)>=9?"#ffb84d":(z/2)%2?"#3a1c00":"#6b3500";s3.insertBefore(d,s3.firstChild)}
+const H=[...document.querySelectorAll("#hud b")];setInterval(()=>{H[0].textContent=94+(Math.random()*6|0);H[1].textContent=80+(Math.random()*15|0);H[3].textContent=String(Math.random()*9|0).padStart(2,"0")},900)})();</script><script>/* Where is your MirtCoin node?
+   Local test:  "http://localhost:8332"
+   Public:      your Cloudflare Tunnel https URL, e.g. "https://node.yourdomain.com"
+   Quick test:  https://yoursite.netlify.app/?node=http://localhost:8332  */
+window.MIRT_CONFIG = {
+  NODE_URL: "",
+  /* wMIRT / liquidity (fill in when real) */
+  WMIRT_CHAIN: "BNB Chain (BEP-20)", WMIRT_CONTRACT: "", POOL_URL: "", LP_PROOF_URL: "", LIQUIDITY_USDT: "",
+  /* Exchanges: add an entry ONLY when it is real. status: "live" | "applied".
+     liveFrom (optional, ISO date) makes the site count down and flip to LIVE by itself at that time.
+     Example: { name: "ExampleEx", url: "https://example.com/trade/MIRT_USDT", status: "applied", liveFrom: "2026-12-01T12:00:00Z" } */
+  EXCHANGES: []
+}; /* empty = same Netlify site (/api) */
+</script><script>/* MIRT chain engine: Bitcoin-style PoW + UTXO + secp256k1 ECDSA. Runs fully in the browser. */
+const MirtChain=(function(){
+const enc=new TextEncoder(),UNIT=1e8,MAXSUP=27000000*UNIT,PREMINE1=1500000*UNIT,PREMINE2=750000*UNIT,HALVING=1650000,R0=7.5*UNIT,RETARGET=10,TARGET_SEC=120,START_BITS=24,MIN_BITS=22,MAX_BITS=48,MAX_REORG=360;
+/* ---------- SHA-256 ---------- */
+const K=new Uint32Array([0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2]);
+const Wb=new Uint32Array(64);
+function sha256(m){const l=m.length,nb=((l+9+63)>>6)<<6,b=new Uint8Array(nb);b.set(m);b[l]=0x80;const dv=new DataView(b.buffer);dv.setUint32(nb-4,(l*8)>>>0);dv.setUint32(nb-8,Math.floor(l/0x20000000));
+let h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+for(let o=0;o<nb;o+=64){for(let i=0;i<16;i++)Wb[i]=dv.getUint32(o+i*4);
+for(let i=16;i<64;i++){const a=Wb[i-15],c=Wb[i-2],s0=((a>>>7)|(a<<25))^((a>>>18)|(a<<14))^(a>>>3),s1=((c>>>17)|(c<<15))^((c>>>19)|(c<<13))^(c>>>10);Wb[i]=(Wb[i-16]+s0+Wb[i-7]+s1)|0}
+let a=h0,bb=h1,c=h2,d=h3,e=h4,f=h5,g=h6,h=h7;
+for(let i=0;i<64;i++){const S1=((e>>>6)|(e<<26))^((e>>>11)|(e<<21))^((e>>>25)|(e<<7)),ch=(e&f)^(~e&g),t1=(h+S1+ch+K[i]+Wb[i])|0,S0=((a>>>2)|(a<<30))^((a>>>13)|(a<<19))^((a>>>22)|(a<<10)),mj=(a&bb)^(a&c)^(bb&c),t2=(S0+mj)|0;h=g;g=f;f=e;e=(d+t1)|0;d=c;c=bb;bb=a;a=(t1+t2)|0}
+h0=(h0+a)|0;h1=(h1+bb)|0;h2=(h2+c)|0;h3=(h3+d)|0;h4=(h4+e)|0;h5=(h5+f)|0;h6=(h6+g)|0;h7=(h7+h)|0}
+const out=new Uint8Array(32),ov=new DataView(out.buffer);[h0,h1,h2,h3,h4,h5,h6,h7].forEach((v,i)=>ov.setUint32(i*4,v>>>0));return out}
+const sha256d=m=>sha256(sha256(m));
+const hex=u=>Array.from(u,x=>x.toString(16).padStart(2,"0")).join("");
+const unhex=s=>{const u=new Uint8Array(s.length/2);for(let i=0;i<u.length;i++)u[i]=parseInt(s.substr(i*2,2),16);return u};
+const hs=s=>hex(sha256d(enc.encode(s)));
+function zeroBits(u){let n=0;for(const x of u){if(x===0){n+=8;continue}n+=Math.clz32(x)-24;break}return n}
+/* ---------- secp256k1 ---------- */
+const P=2n**256n-2n**32n-977n,N=0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141n,G={x:0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798n,y:0x483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8n};
+const md=(a,m=P)=>{const r=a%m;return r>=0n?r:r+m};
+function inv(a,m=P){let[l,h]=[md(a,m),m],[x0,x1]=[1n,0n];while(h){const q=l/h;[l,h]=[h,l-q*h];[x0,x1]=[x1,x0-q*x1]}return md(x0,m)}
+function padd(a,b){if(!a)return b;if(!b)return a;let l;if(a.x===b.x){if(md(a.y+b.y)===0n)return null;l=md(3n*a.x*a.x*inv(2n*a.y))}else l=md((b.y-a.y)*inv(b.x-a.x));const x=md(l*l-a.x-b.x);return{x,y:md(l*(a.x-x)-a.y)}}
+function pmul(k,p){let r=null,q=p;while(k>0n){if(k&1n)r=padd(r,q);q=padd(q,q);k>>=1n}return r}
+const big=u=>BigInt("0x"+(hex(u)||"0")),b32=n=>unhex(n.toString(16).padStart(64,"0"));
+const pubHex=pt=>(pt.y&1n?"03":"02")+pt.x.toString(16).padStart(64,"0");
+function pubParse(h){const x=BigInt("0x"+h.slice(2)),y2=md(x*x*x+7n);let y=1n,e=(P+1n)/4n,b=y2,r=1n;while(e>0n){if(e&1n)r=md(r*b);b=md(b*b);e>>=1n}y=r;if(md(y*y)!==y2)throw Error("bad pubkey");if((y&1n)!==(h.slice(0,2)==="03"?1n:0n))y=P-y;return{x,y}}
+function sign(d,msgHex){const z=BigInt("0x"+msgHex)%N;for(let c=0;;c++){const k=big(sha256(enc.encode(d.toString(16)+msgHex+c)))%N;if(k===0n)continue;const R=pmul(k,G),r=md(R.x,N);if(r===0n)continue;let s=md(inv(k,N)*(z+r*d),N);if(s===0n)continue;if(s>N/2n)s=N-s;return r.toString(16).padStart(64,"0")+s.toString(16).padStart(64,"0")}}
+function verify(pubH,msgHex,sig){try{const Q=pubParse(pubH),z=BigInt("0x"+msgHex)%N,r=BigInt("0x"+sig.slice(0,64)),s=BigInt("0x"+sig.slice(64));if(r<=0n||r>=N||s<=0n||s>=N)return false;const w=inv(s,N),pt=padd(pmul(md(z*w,N),G),pmul(md(r*w,N),Q));return !!pt&&md(pt.x,N)===r}catch(e){return false}}
+/* ---------- addresses (Base58Check, version 0x32 -> starts with M) ---------- */
+const B58="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+function b58e(u){let n=big(u),s="";while(n>0n){s=B58[Number(n%58n)]+s;n/=58n}for(const x of u){if(x)break;s="1"+s}return s}
+function b58d(s){let n=0n;for(const c of s){const i=B58.indexOf(c);if(i<0)throw Error("b58");n=n*58n+BigInt(i)}let h=n.toString(16);if(h.length%2)h="0"+h;const u=n?unhex(h):new Uint8Array(0);let z=0;while(z<s.length&&s[z]==="1")z++;const o=new Uint8Array(z+u.length);o.set(u,z);return o}
+function addrOf(pubH){const h=sha256(sha256(unhex(pubH))).slice(0,20),pl=new Uint8Array(21);pl[0]=0x32;pl.set(h,1);const ck=sha256d(pl).slice(0,4),f=new Uint8Array(25);f.set(pl);f.set(ck,21);return b58e(f)}
+function validAddr(a){try{if(typeof a!=="string"||a.length<26||a.length>36)return false;const u=b58d(a);if(u.length!==25||u[0]!==0x32)return false;const ck=sha256d(u.slice(0,21)).slice(0,4);return ck.every((x,i)=>x===u[21+i])}catch(e){return false}}
+/* ---------- wallet from username + password ---------- */
+async function wallet(user,pass){user=String(user).trim().toLowerCase();const km=await crypto.subtle.importKey("raw",enc.encode(pass),"PBKDF2",false,["deriveBits"]);const bits=new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt:enc.encode("MIRT-WALLET-v1:"+user),iterations:200000,hash:"SHA-256"},km,256));const d=big(bits)%(N-1n)+1n,pub=pubHex(pmul(d,G));return{user,d,pub,addr:addrOf(pub)}}
+/* ---------- transactions ---------- */
+const txid=t=>hs(JSON.stringify([t.ins.map(i=>[i.txid,i.n]),t.outs.map(o=>[o.addr,o.amt]),t.msg||"",t.h||0]));
+function mkTx(ins,outs,extra){const t=Object.assign({ins,outs},extra||{});t.id=txid(t);return t}
+function coinbase(h,outs,msg){return mkTx([],outs,{h,msg:msg||""})}
+const reward=h=>h<1?0:Math.floor(R0/Math.pow(2,Math.floor((h-1)/HALVING)));
+/* ---------- merkle & header ---------- */
+function merkle(ids){if(!ids.length)return hex(new Uint8Array(32));let l=ids.slice();while(l.length>1){if(l.length%2)l.push(l[l.length-1]);const n=[];for(let i=0;i<l.length;i+=2)n.push(hex(sha256d(unhex(l[i]+l[i+1]))));l=n}return l[0]}
+function headerBytes(b,nonce){const u=new Uint8Array(73),dv=new DataView(u.buffer);u.set(unhex(b.prev),0);u.set(unhex(b.merkle),32);dv.setUint32(64,b.time>>>0);u[68]=b.bits;dv.setUint32(69,nonce>>>0);return u}
+const blockHash=b=>hex(sha256d(headerBytes(b,b.nonce)));
+/* ---------- chain ---------- */
+class Chain{
+constructor(genesisOuts,store){this.store=store||null;this.gOuts=genesisOuts;this.blocks=[];this.mempool=[];this.utxo=new Map();if(!this.load())this.reset()}
+reset(){this.blocks=[];this.mempool=[];this.utxo=new Map();const cb=coinbase(0,this.gOuts,"MirtCoin ($MIRT) genesis 16/Nov/2026: mine it, own it");const g={height:0,prev:hex(new Uint8Array(32)),merkle:merkle([cb.id]),time:1794787200,bits:0,nonce:0,txs:[cb],miner:"genesis"};g.hash=blockHash(g);this.blocks.push(g);this.applyTxs(g);this.save()}
+save(){if(!this.store)return;try{this.store.setItem("mirt_mainnet_v1",JSON.stringify({g:this.gOuts[0].addr,b:this.blocks,m:this.mempool}))}catch(e){}}
+load(){if(!this.store)return false;try{const j=JSON.parse(this.store.getItem("mirt_mainnet_v1")||"null");if(!j||j.g!==this.gOuts[0].addr||!j.b||!j.b.length)return false;const gen=new Chain(this.gOuts,null);if(j.b[0].hash!==gen.blocks[0].hash)return false;this.blocks=[gen.blocks[0]];this.utxo=new Map();this.applyTxs(this.blocks[0]);for(let i=1;i<j.b.length;i++){const r=this.accept(j.b[i],true);if(r!==true){this.blocks=[gen.blocks[0]];this.utxo=new Map();this.applyTxs(this.blocks[0]);break}}this.mempool=[];(j.m||[]).forEach(t=>this.submit(t));return true}catch(e){return false}}
+work(){let w=0n;for(const b of this.blocks)w+=2n**BigInt(b.bits);return w}
+tryReplace(bl){const c=new Chain(this.gOuts,null);if(!Array.isArray(bl)||!bl.length||bl[0].hash!==c.blocks[0].hash)return"bad genesis";c.checkpoints=this.checkpoints;{let f=0;while(f<bl.length&&f<this.blocks.length&&bl[f].hash===this.blocks[f].hash)f++;if(this.blocks.length-f>MAX_REORG)return"reorg too deep"}for(let i=1;i<bl.length;i++){const r=c.accept(bl[i]);if(r!==true)return"block "+i+": "+r}if(c.work()<=this.work())return"not more work";this.blocks=c.blocks;this.utxo=c.utxo;const old=this.mempool;this.mempool=[];old.forEach(t=>this.submit(t));this.save();return true}
+get tip(){return this.blocks[this.blocks.length-1]}
+applyTxs(b){for(const t of b.txs){for(const i of t.ins)this.utxo.delete(i.txid+":"+i.n);t.outs.forEach((o,n)=>this.utxo.set(t.id+":"+n,{addr:o.addr,amt:o.amt,txid:t.id,n,h:b.height}))}}
+nextBits(){const h=this.blocks.length,t=this.tip;if(h%RETARGET!==0)return t.bits||START_BITS;if(h<RETARGET)return START_BITS;const a=this.blocks[h-RETARGET],span=Math.max(1,t.time-a.time),ratio=(RETARGET*TARGET_SEC)/span;let d=Math.round(Math.log2(ratio));d=Math.max(-2,Math.min(2,d));return Math.max(MIN_BITS,Math.min(MAX_BITS,(t.bits||START_BITS)+d))}
+balance(addr){let s=0;for(const u of this.utxo.values())if(u.addr===addr)s+=u.amt;return s}
+utxosOf(addr){const l=[];for(const[k,u]of this.utxo)if(u.addr===addr)l.push(Object.assign({key:k},u));return l.sort((a,b)=>b.amt-a.amt)}
+supply(){let s=0;for(const u of this.utxo.values())s+=u.amt;return s}
+checkTx(t,pool){/* returns fee or error string */if(!t||!t.ins||!t.outs||!t.outs.length)return"bad tx";if(txid(t)!==t.id)return"bad txid";let inSum=0,outSum=0;const seen=new Set(),msg=t.id;
+for(const i of t.ins){const k=i.txid+":"+i.n;if(seen.has(k))return"duplicate input";seen.add(k);const u=this.utxo.get(k);if(!u)return"input already spent or unknown";if(pool&&pool.has(k))return"already in mempool";if(addrOf(i.pub)!==u.addr)return"pubkey does not match";if(!verify(i.pub,msg,i.sig))return"bad signature";inSum+=u.amt}
+for(const o of t.outs){if(!validAddr(o.addr))return"bad address";if(!Number.isInteger(o.amt)||o.amt<=0)return"bad amount";outSum+=o.amt}
+if(!t.ins.length)return"no inputs";if(outSum>inSum)return"outputs exceed inputs";return inSum-outSum}
+submit(t){const pool=new Set();this.mempool.forEach(m=>m.ins.forEach(i=>pool.add(i.txid+":"+i.n)));const r=this.checkTx(t,pool);if(typeof r==="string")return r;this.mempool.push(t);this.save();return true}
+build(from,to,amt,fee){/* amt, fee in MIRT units (integers of 1e-8) */const need=amt+fee,us=this.utxosOf(from.addr),taken=[];let s=0;const used=new Set();this.mempool.forEach(m=>m.ins.forEach(i=>used.add(i.txid+":"+i.n)));for(const u of us){if(used.has(u.key))continue;taken.push(u);s+=u.amt;if(s>=need)break}if(s<need)return"Not enough balance";const outs=[{addr:to,amt}];if(s-need>0)outs.push({addr:from.addr,amt:s-need});const t=mkTx(taken.map(u=>({txid:u.txid,n:u.n})),outs);const sig=sign(from.d,t.id);t.ins.forEach(i=>{i.pub=from.pub;i.sig=sig});/* id excludes sigs */return t}
+expectedBits(time){const base=this.nextBits(),el=time-this.tip.time;let r=0;if(el>4*TARGET_SEC)r=Math.min(30,Math.floor(Math.log2(el/(2*TARGET_SEC))));return Math.max(MIN_BITS,base-r)}
+template(minerAddr){const h=this.blocks.length,txs=[],pool=new Set();let fees=0;for(const t of this.mempool){const r=this.checkTx(t,pool);if(typeof r==="number"){fees+=r;t.ins.forEach(i=>pool.add(i.txid+":"+i.n));txs.push(t)}}const cb=coinbase(h,[{addr:minerAddr,amt:reward(h)+fees}],"");const all=[cb].concat(txs);const T=Math.max(Math.floor(Date.now()/1000),this.tip.time+1);return{height:h,prev:this.tip.hash,merkle:merkle(all.map(t=>t.id)),time:T,bits:this.expectedBits(T),nonce:0,txs:all,miner:minerAddr}}
+accept(b,quiet){try{return this._accept(b,quiet)}catch(e){return"malformed block"}}
+_accept(b,quiet){if(!b||!Array.isArray(b.txs)||!b.txs.length||b.txs.length>5000)return"bad block";if(!quiet&&b.time>Math.floor(Date.now()/1000)+7200)return"time too far in future";const t=this.tip;if(b.height!==this.blocks.length)return"wrong height";if(b.prev!==t.hash)return"wrong parent";if(!Number.isInteger(b.time)||b.time<t.time)return"bad time";if(!(b.bits<=this.nextBits()&&b.bits>=this.expectedBits(b.time)))return"wrong difficulty";if(blockHash(b)!==b.hash)return"bad hash";{const cp=this.checkpoints&&this.checkpoints[b.height];if(cp&&cp!==b.hash)return"checkpoint mismatch"}if(zeroBits(unhex(b.hash))<b.bits)return"not enough work";if(merkle(b.txs.map(x=>x.id))!==b.merkle)return"bad merkle";
+const cb=b.txs[0];if(!cb||cb.ins.length||cb.h!==b.height||txid(cb)!==cb.id)return"bad coinbase";if(!Array.isArray(cb.outs)||!cb.outs.length||cb.outs.some(o=>!validAddr(o.addr)||!Number.isInteger(o.amt)||o.amt<=0))return"bad coinbase outputs";let fees=0;const pool=new Set();for(const x of b.txs.slice(1)){const r=this.checkTx(x,pool);if(typeof r!=="number")return"tx: "+r;fees+=r;x.ins.forEach(i=>pool.add(i.txid+":"+i.n))}
+const cbSum=cb.outs.reduce((s,o)=>s+o.amt,0);if(cbSum>reward(b.height)+fees)return"coinbase too large";if(this.supply()+reward(b.height)>MAXSUP)return"supply cap";
+this.blocks.push(b);this.applyTxs(b);const ids=new Set(b.txs.map(x=>x.id));this.mempool=this.mempool.filter(m=>!ids.has(m.id)&&m.ins.every(i=>this.utxo.has(i.txid+":"+i.n)));if(!quiet)this.save();return true}
+history(addr,lim){const out=[];for(let i=this.blocks.length-1;i>=0&&out.length<(lim||20);i--){const b=this.blocks[i];for(const t of b.txs){let recv=0,sent=0;t.outs.forEach(o=>{if(o.addr===addr)recv+=o.amt});const isCb=!t.ins.length;if(t.ins.some(x=>x.pub&&addrOf(x.pub)===addr)){sent=1}if(recv||sent){out.push({h:b.height,id:t.id,time:b.time,cb:isCb,sent:!!sent,outs:t.outs,recv})}}}return out}
+rich(n){const m=new Map();for(const u of this.utxo.values())m.set(u.addr,(m.get(u.addr)||0)+u.amt);return[...m].sort((a,b)=>b[1]-a[1]).slice(0,n||10)}
+minersTop(n){const m=new Map();for(const b of this.blocks.slice(1))m.set(b.miner,(m.get(b.miner)||0)+1);return[...m].sort((a,b)=>b[1]-a[1]).slice(0,n||999)}
+}
+/* miner: calls step() repeatedly; returns {found, hashes} */
+function mineSlice(b,ms,startNonce){const hdr=headerBytes(b,0),dv=new DataView(hdr.buffer),t0=Date.now();let n=startNonce>>>0,cnt=0;for(;;){dv.setUint32(69,n);const h=sha256d(hdr);cnt++;if(zeroBits(h)>=b.bits){b.nonce=n;b.hash=hex(h);return{found:true,hashes:cnt,nonce:n}}n=(n+1)>>>0;if(n===0){b.time++;dv.setUint32(64,b.time>>>0)}if((cnt&1023)===0&&Date.now()-t0>=ms)return{found:false,hashes:cnt,nonce:n,last:hex(h)}}}
+const fmt=a=>{const w=Math.trunc(a/UNIT),f=String(Math.abs(a)%UNIT).padStart(8,"0").replace(/0+$/,"");return w.toLocaleString("en-US")+(f?"."+f:"")};
+const parseAmt=s=>{s=String(s).trim();if(!/^\d+(\.\d{1,8})?$/.test(s))return null;const[w,f=""]=s.split(".");return Number(w)*UNIT+Number((f+"00000000").slice(0,8))};
+/* ---------- recovery phrase (24 words, MIRT format, not BIP39) ---------- */
+const C1="bdfghklmnprstvwz",V1="aeio",C2="dklmnrst",V2="aeiu";
+const WORDS=[];for(let a=0;a<16;a++)for(let b=0;b<4;b++)for(let c=0;c<8;c++)for(let d=0;d<4;d++)WORDS.push(C1[a]+V1[b]+C2[c]+V2[d]);
+const WIDX=new Map(WORDS.map((w,i)=>[w,i]));
+function keyFromEntropy(e){const d=big(sha256d(enc.encode("MIRT-SEED-v1:"+hex(e))))%(N-1n)+1n,pub=pubHex(pmul(d,G));return{user:"recovery-phrase wallet",d,pub,addr:addrOf(pub)}}
+function newPhrase(){const e=new Uint8Array(32);crypto.getRandomValues(e);let bits="";for(const x of e)bits+=x.toString(2).padStart(8,"0");bits+=sha256(e)[0].toString(2).padStart(8,"0");const words=[];for(let i=0;i<24;i++)words.push(WORDS[parseInt(bits.slice(i*11,i*11+11),2)]);return{words,phrase:words.join(" ")}}
+function walletFromPhrase(t){const w=String(t).toLowerCase().trim().split(/\s+/);if(w.length!==24)throw Error("Phrase must be exactly 24 words");let bits="";for(const x of w){if(!WIDX.has(x))throw Error("Unknown word: "+x);bits+=WIDX.get(x).toString(2).padStart(11,"0")}const e=new Uint8Array(32);for(let i=0;i<32;i++)e[i]=parseInt(bits.slice(i*8,i*8+8),2);if(sha256(e)[0]!==parseInt(bits.slice(256,264),2))throw Error("Phrase checksum failed. Check every word.");return keyFromEntropy(e)}
+return{newPhrase,walletFromPhrase,GENESIS_OUTS:[{addr:"MJVmaN7EDd3yCyBVJPSMLFuif1CWQdDV3G",amt:PREMINE1},{addr:"MUjpdU53kecUVrji7df8stDMFjvE9n8mUq",amt:PREMINE2}],Chain,wallet,addrOf,validAddr,sha256,sha256d,hex,unhex,mineSlice,reward,fmt,parseAmt,zeroBits,blockHash,verify,sign,UNIT,MAXSUP,PREMINE1,PREMINE2,HALVING,RETARGET,TARGET_SEC,START_BITS}})();
+
+if(typeof module!=="undefined")module.exports=MirtChain;
+</script><script>(function(){const M=MirtChain,$=s=>document.querySelector(s),g=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const F1="MJVmaN7EDd3yCyBVJPSMLFuif1CWQdDV3G",F2="MUjpdU53kecUVrji7df8stDMFjvE9n8mUq";
+let store=null;try{store=window.localStorage;store.setItem("_t","1");store.removeItem("_t")}catch(e){store=null}
+const toast=m=>{const t=g("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)};
+const chain=new M.Chain(M.GENESIS_OUTS,store);
+/* ----- node connection ----- */
+let NODE=(function(){try{const q=new URLSearchParams(location.search).get("node");if(q)return q.replace(/\/$/,"")}catch(e){}return(window.MIRT_CONFIG||{}).NODE_URL||""})(),pinned=/[?&]node=/.test(location.search),discovered=false;
+let online=false,syncing=false,lastPool="",fails=0;
+async function discover(){if(pinned)return;try{const r=await fetch("/api/node-url"),j=await r.json();if(j&&j.url&&j.url!==NODE){NODE=j.url;fails=0;lastPool=""}}catch(e){}}
+async function api(p,o){const r=await fetch(NODE+p,o),j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"HTTP "+r.status);return j}
+function setNB(msg,err){const b=g("nodeb");if(!b)return;b.title=err||"";const ok=online&&!msg;b.innerHTML='<i style="background:'+(ok?"#3ddc84":"#ff4d4d")+'"></i>'+(msg||(online?"MAINNET &middot; BLOCK "+(chain.blocks.length-1):"NODE OFFLINE"))}
+async function sync(){if(syncing)return;syncing=true;if(!discovered||fails>0){discovered=true;await discover()}let added=0,pm=chain.mempool.length;try{const st=await api("/api/status");if(st.genesis!==chain.blocks[0].hash){online=false;setNB("WRONG NETWORK");return}
+let h=chain.blocks.length,resets=0;if(st.height+1<h||(st.height+1===h&&st.tip!==chain.tip.hash)){chain.reset();h=1;resets=1}
+while(h<st.height+1){const r=await api("/api/blocks?from="+h+"&limit=300");if(!r.blocks.length)break;if(r.blocks[0].prev!==chain.tip.hash){if(resets++)throw new Error("chain mismatch");chain.reset();h=1;continue}
+for(const b of r.blocks){const x=chain.accept(b,true);if(x!==true)throw new Error("invalid block from node: "+x);added++}h=chain.blocks.length}
+if(st.pool!==lastPool||added){const m=await api("/api/mempool");chain.mempool=[];m.txs.forEach(t=>chain.submit(t));lastPool=st.pool}fails=0;online=true;setNB();if(added){if(mining)newTemplate();render()}else if(pm!==chain.mempool.length)render()}
+catch(e){fails++;const s=String(e.message),bad=s.indexOf("invalid")>=0||s.indexOf("mismatch")>=0;if(bad||fails>=3)online=false;setNB(bad?"NODE DATA INVALID":null,s)}finally{syncing=false}}
+async function pushBlock(blk){const amt=M.fmt(blk.txs[0].outs[0].amt);try{await api("/api/block",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(blk)});g("mmsg").textContent="Block #"+blk.height+" mined. +"+amt+" MIRT";toast("Block #"+blk.height+" mined +"+amt+" MIRT");flash(blk.height,amt);if(window.__burst)window.__burst(innerWidth/2,innerHeight*.5,60)}catch(e){g("mmsg").textContent="Node did not accept block #"+blk.height+": "+e.message;await sync();if(mining)newTemplate()}}
+let me=null,mining=false,mb=null,mn=0,hashes=0,tStart=0,lastHr=0;
+const short=a=>a.slice(0,6)+"..."+a.slice(-5),ago=t=>{const s=Math.max(0,Math.floor(Date.now()/1000-t));return s<60?s+"s ago":s<3600?Math.floor(s/60)+"m ago":s<86400?Math.floor(s/3600)+"h ago":Math.floor(s/86400)+"d ago"};
+g("fa1").textContent=F1;g("fa2").textContent=F2;
+/* ----- wallet ----- */
+async function auth(){const u=g("wu").value.trim(),p=g("wp").value,m=g("wmsg");if(!/^[A-Za-z0-9_.-]{3,32}$/.test(u)||!p){m.textContent="Enter your username and password.";return}
+m.textContent="Deriving key...";g("wl").disabled=true;try{me=await M.wallet(u,p);m.textContent="";g("wp").value="";show()}catch(e){m.textContent="Could not derive key in this browser."}g("wl").disabled=false}
+let pend=null;
+g("wl").onclick=auth;g("wp").addEventListener("keydown",e=>{if(e.key==="Enter")auth()});
+g("wlp").onclick=()=>{const m=g("wmsg");try{me=M.walletFromPhrase(g("wph").value);g("wph").value="";m.textContent="";show()}catch(e){m.textContent=e.message}};
+g("wc").onclick=()=>{pend=M.newPhrase();g("phw").innerHTML=pend.words.map((w,i)=>"<span><i>"+(i+1)+"</i>"+w+"</span>").join("");g("phck").checked=false;g("phbox").style.display="";g("wmsg").textContent=""};
+g("phcp").onclick=()=>pend&&navigator.clipboard.writeText(pend.phrase).then(()=>toast("Words copied. Store them offline."));
+g("phok").onclick=()=>{if(!pend)return;if(!g("phck").checked){g("wmsg").textContent="Tick the box after you have saved the 24 words.";return}me=M.walletFromPhrase(pend.phrase);pend=null;g("phbox").style.display="none";g("phw").innerHTML="";toast("Wallet created. Keep your 24 words safe.");show()};
+
+g("alo").onclick=()=>{if(mining)toggleMine();me=null;show();toast("Logged out")};
+g("acp").onclick=()=>me&&navigator.clipboard.writeText(me.addr).then(()=>toast("Address copied"));
+function show(){g("login").style.display=me?"none":"";g("acct").style.display=me?"":"none";if(me){g("au").textContent=me.user;g("aad").textContent=me.addr}render()}
+g("ss").onclick=async()=>{const m=g("smsg");if(!me)return;const to=g("st").value.trim(),a=M.parseAmt(g("sa").value),f=M.parseAmt(g("sf").value||"0");
+if(!M.validAddr(to)){m.textContent="That is not a valid MIRT address.";return}if(!a||a<=0){m.textContent="Enter a valid amount (up to 8 decimals).";return}if(f===null){m.textContent="Fee is not valid.";return}if(to===me.addr){m.textContent="You cannot send to yourself.";return}
+const t=chain.build(me,to,a,f);if(typeof t==="string"){m.textContent=t;return}const r=chain.submit(t);if(r!==true){m.textContent="Rejected: "+r;return}try{await api("/api/tx",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)})}catch(e){m.textContent="Node rejected: "+e.message;sync();return}
+m.innerHTML="Sent. Waiting for a miner to confirm it. Tx <span class='mono'>"+t.id.slice(0,16)+"...</span> Start mining to confirm it in the next block.";g("sa").value="";g("st").value="";render()};
+/* ----- mining ----- */
+function toggleMine(){if(mining){mining=false;g("mgo").textContent="Start mining";g("ms").textContent="Idle";g("mh").textContent="0 H/s";g("mgh").textContent="0";g("mg").classList.remove("on");render();return}
+if(!me){g("mmsg").textContent="Login to a wallet first, then press start.";location.hash="#wallet";return}
+if(!online){toast("Node offline - cannot mine");return}mining=true;g("mgo").textContent="Stop mining";g("ms").textContent="Mining";g("mg").classList.add("on");newTemplate();render();(function loop(){if(!mining)return;const r=M.mineSlice(mb,(window.__pw||{s:45}).s,mn);hashes+=r.hashes;mn=r.nonce;
+if(performance.now()-(window.__rt||0)>15000){window.__rt=performance.now();const T=Math.max(Math.floor(Date.now()/1000),chain.tip.time+1);if(chain.expectedBits(T)<mb.bits){mb=chain.template(me.addr);mn=0}}
+const now=performance.now();if(now-lastHr>500){g("mh").textContent=Math.round(hashes/((now-tStart)/1000)).toLocaleString()+" H/s";g("mx").textContent="nonce "+mn.toLocaleString()+"\n"+(r.last||mb.hash||"");lastHr=now;window.__hr=hashes/((now-tStart)/1000);g("mgh").textContent=Math.round(window.__hr).toLocaleString();const pn=g("pnon");if(pn)pn.textContent=(r.last||"").slice(0,12)}
+if(r.found){const blk=mb,res=chain.accept(blk);if(res===true)pushBlock(blk);else g("mmsg").textContent="Block rejected: "+res;render();newTemplate()}
+setTimeout(loop,(window.__pw||{d:0}).d)})()}
+function newTemplate(){mb=chain.template(me.addr);mn=0;hashes=0;tStart=performance.now();lastHr=0}
+g("mgo").onclick=toggleMine;
+/* ----- render ----- */
+const RECENT=8;
+const big2=b=>{const n=Math.pow(2,b);return n>=1e9?(n/1e9).toFixed(1)+"B":n>=1e6?(n/1e6).toFixed(1)+"M":Math.round(n/1e3)+"K"};
+const dur=s=>s<90?Math.round(s)+" sec":s<5400?Math.round(s/60)+" min":(s/3600).toFixed(1)+" hrs";
+function strip(){const c=g("cstrip");if(!c)return;const bs=chain.blocks.slice(-5),key=chain.tip.hash+(mining?"1":"0");if(c.dataset.k===key)return;c.dataset.k=key;
+c.innerHTML=bs.map((b,i)=>'<div class="cb2'+(i===bs.length-1?" new":"")+'"><b>#'+b.height+'</b><span class="mono">'+b.hash.slice(0,12)+'</span><small>'+b.txs.length+' tx &middot; '+(b.height?short(b.miner):"genesis")+'</small></div>').join("")+'<div class="cb2 pend"><b>#'+chain.blocks.length+'</b><span class="mono" id="pnon">'+(mining?"hashing...":"waiting")+'</span><small>'+(mining?"MINING":"NEXT BLOCK")+'</small></div>';c.scrollLeft=c.scrollWidth}
+function flash(h,a){const f=g("bf");f.innerHTML="<b>BLOCK #"+h+" FOUND</b><span>+"+a+" MIRT</span>";f.classList.remove("on");void f.offsetWidth;f.classList.add("on")}
+function render(){const t=chain.tip,sup=chain.supply(),h=chain.blocks.length;const hh=g("hh");if(hh)hh.textContent=(h-1).toLocaleString();
+g("gh").textContent=chain.blocks[0].hash.slice(0,10)+"...";g("fb1").textContent=M.fmt(chain.balance(F1))+" MIRT";g("fb2").textContent=M.fmt(chain.balance(F2))+" MIRT";
+if(me){g("ab").textContent=M.fmt(chain.balance(me.addr))+" MIRT";
+const hs=chain.history(me.addr,8);g("ah").innerHTML=hs.length?hs.map(x=>{const kind=x.cb?"Mined":x.sent?"Sent":"Received";const amt=x.sent?x.outs.filter(o=>o.addr!==me.addr).reduce((s,o)=>s+o.amt,0):x.recv;return'<div class="sr"><div>'+kind+' &middot; block #'+x.h+'<small class="mono">'+x.id.slice(0,18)+'...</small></div><em class="'+(x.sent?"":"c")+'">'+(x.sent?"-":"+")+M.fmt(amt)+'</em></div>'}).join(""):'<p class="pnote">No activity yet.</p>'}
+const bt=chain.nextBits(),hr=window.__hr||170000;g("md").textContent=bt+" bits";g("mw").textContent=big2(bt)+" hashes";g("mt").textContent="~"+dur(Math.pow(2,bt)/hr);strip();g("mr").textContent=M.fmt(M.reward(h))+" MIRT";g("mn").textContent="#"+h;g("mp").textContent=chain.mempool.length;
+g("eh").textContent="Height "+t.height;g("es").textContent=M.fmt(sup);g("em").textContent=M.fmt(sup-M.PREMINE1-M.PREMINE2);g("ehv").textContent=(M.HALVING-((h-1)%M.HALVING)).toLocaleString()+" blocks";g("et").textContent=t.hash.slice(0,14)+"...";
+g("sb1").style.width=((M.PREMINE1+M.PREMINE2)/M.MAXSUP*100)+"%";g("sb2").style.width=((sup-M.PREMINE1-M.PREMINE2)/M.MAXSUP*100)+"%";
+g("blks").innerHTML=chain.blocks.slice(-RECENT).reverse().map(b=>'<div class="sr blk" data-h="'+b.height+'"><div>#'+b.height+' &middot; '+(b.height?short(b.miner):"genesis")+'<small class="mono">'+b.hash.slice(0,22)+'...</small></div><em>'+b.txs.length+' TX &middot; '+ago(b.time)+'</em></div>').join("");
+g("rich").innerHTML=chain.rich(5).map((r,i)=>'<div class="sr"><div>#'+(i+1)+' <span class="mono">'+short(r[0])+'</span>'+(r[0]===F1?"<small>Creator wallet</small>":r[0]===F2?"<small>Reserve wallet</small>":"")+'</div><em class="c">'+M.fmt(r[1])+'</em></div>').join("");
+nft()}
+g("blks").addEventListener("click",e=>{const r=e.target.closest(".blk");if(r)detail(+r.dataset.h)});
+function detail(h){const b=chain.blocks[h];if(!b){g("eres").textContent="Block not found.";return}g("eres").innerHTML="<b>Block #"+b.height+"</b><br>hash "+b.hash+"<br>prev "+b.prev+"<br>merkle "+b.merkle+"<br>nonce "+b.nonce.toLocaleString()+" &middot; difficulty "+b.bits+" bits<br>miner "+(b.height?esc(b.miner):"genesis")+"<br>"+b.txs.map(t=>"tx "+t.id.slice(0,20)+"... "+(t.ins.length?"":"(coinbase) ")+t.outs.map(o=>"-> "+short(o.addr)+" "+M.fmt(o.amt)).join(", ")).join("<br>")}
+g("eq").addEventListener("input",()=>{const q=g("eq").value.trim(),r=g("eres");if(!q){r.textContent="";return}
+if(/^\d+$/.test(q))return detail(+q);
+if(M.validAddr(q)){const hs=chain.history(q,6);r.innerHTML="<b>"+esc(q)+"</b><br>Balance "+M.fmt(chain.balance(q))+" MIRT<br>"+(hs.length?hs.map(x=>"#"+x.h+" "+(x.cb?"mined":x.sent?"sent":"received")+" "+x.id.slice(0,14)+"...").join("<br>"):"No transactions");return}
+if(/^[0-9a-f]{16,64}$/i.test(q)){for(const b of chain.blocks){const t=b.txs.find(x=>x.id.startsWith(q.toLowerCase()));if(t){r.innerHTML="<b>Tx "+t.id+"</b><br>in block #"+b.height+"<br>"+t.outs.map(o=>"-> "+esc(o.addr)+" "+M.fmt(o.amt)).join("<br>");return}}r.textContent="Not found.";return}
+r.textContent="Enter a valid address, block number or tx id."});
+/* ----- NFT leaderboard from chain ----- */
+const NM={leg:"LEGENDARY",epi:"EPIC",rar:"RARE",unc:"UNCOMMON",com:"COMMON"},NFT_END=Date.UTC(2026,9,17,18,0,0);
+function tier(rank,addr){if(rank<=9)return"leg";if(rank<=49)return"epi";if(rank<=199)return"rar";if(rank>999)return"";let x=0;for(const c of addr)x=(x*31+c.charCodeAt(0))>>>0;return x%800<300?"unc":"com"}
+function nft(){return;const top=chain.minersTop(999);g("nfpc").textContent=top.length.toLocaleString()+" miners";
+const L=g("nflb");L.innerHTML=top.length?top.slice(0,20).map((e,i)=>{const t=tier(i+1,e[0]);return'<div class="sr"><div>#'+(i+1)+' &middot; <span class="mono">'+short(e[0])+'</span><small>'+e[1]+' block'+(e[1]==1?"":"s")+' mined</small></div><em class="'+(t?"t-"+t:"")+'">'+(t?NM[t]:"")+'</em></div>'}).join(""):'<p class="pnote" style="margin:14px 0 0">No blocks mined yet. Be the first miner.</p>';
+if(!me){g("nfsc").textContent="0";g("nfst").textContent="Not joined";g("nfnote").textContent="Login to your wallet and mine at least one block to enter the draw.";g("nfjoin").style.display="";return}
+const sc=chain.blocks.slice(1).filter(b=>b.miner===me.addr).length,rk=top.findIndex(x=>x[0]===me.addr)+1;g("nfsc").textContent=sc.toLocaleString();g("nfst").textContent=sc?"In the draw":"Not joined";g("nfjoin").style.display="none";
+g("nfnote").textContent=sc?"Rank #"+rk+" of "+top.length+". "+(NM[tier(rk,me.addr)]||"")+" card for now. Mine more blocks to climb.":"Mine your first block to enter the draw."}
+function tick(){const d=Math.max(0,NFT_END-Date.now()),v=[Math.floor(d/864e5),Math.floor(d%864e5/36e5),Math.floor(d%36e5/6e4),Math.floor(d%6e4/1e3)];document.querySelectorAll("#nfcd b").forEach((b,i)=>b.textContent=String(v[i]).padStart(2,"0"))}
+document.querySelectorAll("#nfcards .nc").forEach(c=>{c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty("--ry",(x*18)+"deg");c.style.setProperty("--rx",(-y*18)+"deg")});["pointerleave","pointerup","pointercancel"].forEach(t=>c.addEventListener(t,()=>{c.style.setProperty("--ry","0deg");c.style.setProperty("--rx","0deg")}))});
+/* tokenomics + footer bits */
+const TK=[{n:"Mineable by anyone (PoW)",v:24.75e6,c:"#ece8de"},{n:"Creator wallet",v:1.5e6,c:"#ffffff"},{n:"Reserve wallet",v:7.5e5,c:"#4b4943"}],tot=27e6;
+g("stack").innerHTML=TK.map(t=>'<i style="background:'+t.c+'" data-w="'+(t.v/tot*100)+'"></i>').join("");
+g("leg").innerHTML=TK.map(t=>'<div class="lr"><span style="color:'+t.c+'">&#9679; '+t.n+'</span><i></i><b>'+t.v.toLocaleString()+' ('+(t.v/tot*100).toFixed(2)+'%)</b></div>').join("");
+g("tk").innerHTML=("MIRTCOIN<b>&#9670;</b>$MIRT<b>&#9670;</b>PROOF OF WORK<b>&#9670;</b>27,000,000 MAX<b>&#9670;</b>HALVING 1,650,000 BLOCKS<b>&#9670;</b>MINE NOW<b>&#9670;</b>MAINNET<b>&#9670;</b>").repeat(14);
+tick();setInterval(tick,1000);setInterval(()=>{if(!mining)render()},15000);show();sync();setInterval(()=>{if(!document.hidden)sync()},15000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)sync()});
+document.addEventListener("visibilitychange",()=>{});
+g("rstc").onclick=()=>{if(mining)toggleMine();chain.reset();render();sync();toast("Resyncing from node...")};
+})();
+</script>
+<script>(function(){const C=window.MIRT_CONFIG||{},g=id=>document.getElementById(id);
+function link(el,url,txt){if(url&&/^https:\/\//.test(url)){el.textContent="";const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";a.style.color="var(--cy)";a.textContent=txt;el.appendChild(a)}}
+g("lqcn").textContent=C.WMIRT_CHAIN||"BNB Chain (BEP-20)";
+if(C.WMIRT_CONTRACT&&/^0x[0-9a-fA-F]{40}$/.test(C.WMIRT_CONTRACT)){g("lqc").textContent=C.WMIRT_CONTRACT;g("lqct").textContent="Deployed";g("lqct").className="c"}
+link(g("lqp"),C.POOL_URL,"Open pool");link(g("lqk"),C.LP_PROOF_URL,"View proof");if(C.LIQUIDITY_USDT)g("lqu").textContent=C.LIQUIDITY_USDT+" USDT";
+if(C.POOL_URL&&C.LP_PROOF_URL&&C.WMIRT_CONTRACT)g("lqs").textContent="Live";
+setInterval(()=>{const a=g("fa2"),b=g("fb2");if(a&&a.textContent)g("lqa").textContent=a.textContent;if(b&&b.textContent&&b.textContent!=="-")g("lqb").textContent=b.textContent},1500);
+/* exchanges: auto LIVE */
+const L=Array.isArray(C.EXCHANGES)?C.EXCHANGES:[],box=g("exl");let timers=[];
+const fmtT=ms=>{const s=Math.max(0,Math.floor(ms/1e3)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);return(d?d+"d ":"")+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(s%60).padStart(2,"0")+"s"};
+function row(name,sub,right,cls,url){const r=document.createElement("div");r.className="sr";const l=document.createElement("div");l.textContent=name;const s=document.createElement("small");s.textContent=sub;l.appendChild(s);const e=document.createElement("em");if(cls)e.className=cls;e.textContent=right;r.appendChild(l);r.appendChild(e);if(url){const a=document.createElement("a");a.className="tb";a.href=url;a.target="_blank";a.rel="noopener";a.textContent="TRADE MIRT";l.appendChild(document.createElement("br"));l.appendChild(a)}box.appendChild(r);return e}
+function draw(){box.textContent="";timers=[];let live=0,shown=0;const now=Date.now();
+for(const x of L){if(!x||!x.name)continue;const url=/^https:\/\//.test(x.url||"")?x.url:"",t=x.liveFrom?Date.parse(x.liveFrom):NaN;
+if((x.status==="live"&&url)||(url&&!isNaN(t)&&now>=t)){row(String(x.name),"Trading is open","LIVE","bl",url);live++;shown++}
+else if(!isNaN(t)&&now<t){const e=row(String(x.name),"Listing opens in","",null,"");e.dataset.t=t;timers.push(e);shown++}
+else if(x.status==="applied"){row(String(x.name),"Listing is not confirmed","APPLIED",null,"");shown++}}
+if(!shown){const p=document.createElement("p");p.className="pnote";p.style.margin="14px 0 0";p.textContent="No exchange has listed MIRT yet. A listing appears here only when it is real and has a working link.";box.appendChild(p)}
+g("exs").textContent=live?live+" live":(shown?"Coming":"No listings")}
+function tick(){let flip=false;for(const e of timers){const d=+e.dataset.t-Date.now();if(d<=0)flip=true;else e.textContent=fmtT(d)}if(flip)draw()}
+draw();tick();setInterval(tick,1000)})();</script>
+<script id="v21js">(function(){if(typeof MirtChain==="undefined")return;const M=MirtChain,g=id=>document.getElementById(id);
+const aur=document.createElement("div");aur.id="aur";aur.innerHTML="<i></i><i></i><i></i>";document.body.prepend(aur);
+const pr=document.createElement("div");pr.id="sprog";document.body.prepend(pr);
+addEventListener("scroll",()=>{const h=document.documentElement;pr.style.transform="scaleX("+(scrollY/Math.max(1,h.scrollHeight-innerHeight))+")"},{passive:true});
+addEventListener("pointermove",e=>{const t=e.target.closest&&e.target.closest(".tkt,details");if(t){const r=t.getBoundingClientRect();t.style.setProperty("--mx",e.clientX-r.left+"px");t.style.setProperty("--my",e.clientY-r.top+"px")}},{passive:true});
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest(".btn");if(!b)return;const r=b.getBoundingClientRect(),s=Math.max(r.width,r.height)*2,p=document.createElement("span");p.className="rp";p.style.cssText="width:"+s+"px;height:"+s+"px;left:"+(e.clientX-r.left-s/2)+"px;top:"+(e.clientY-r.top-s/2)+"px";b.appendChild(p);setTimeout(()=>p.remove(),650)});
+const links=[...document.querySelectorAll("nav a[href^='#']")],so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("act",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-40% 0px -55% 0px"});links.forEach(a=>{const s=document.querySelector(a.getAttribute("href"));if(s)so.observe(s)});
+/* ---- Bitcoin-style miner view: hooks the real miner, changes no consensus code ---- */
+const S={b:null,n:0,round:0,total:0,found:0,h:-1,best:0,last:0,lt:0,hr:[]},orig=M.mineSlice;
+const hl=x=>{let i=0;while(x[i]==="0")i++;return"<u>"+x.slice(0,i)+"</u>"+x.slice(i)};
+const fn=n=>n>=1e12?(n/1e12).toFixed(2)+"T":n>=1e9?(n/1e9).toFixed(2)+"G":n>=1e6?(n/1e6).toFixed(2)+"M":n>=1e3?(n/1e3).toFixed(1)+"K":String(Math.round(n));
+const hdr=(b,n)=>{const u=new Uint8Array(73),d=new DataView(u.buffer);u.set(M.unhex(b.prev),0);u.set(M.unhex(b.merkle),32);d.setUint32(64,b.time>>>0);u[68]=b.bits;d.setUint32(69,n>>>0);return u};
+function found(b,r){const f=g("bxf");if(!f)return;f.innerHTML="<b>BLOCK #"+b.height+" FOUND</b><code>"+hl(b.hash)+"</code><small>nonce "+r.nonce.toLocaleString()+" &middot; "+b.bits+" bits</small>";f.classList.remove("on");void f.offsetWidth;f.classList.add("on");S.round=0;S.best=0}
+M.mineSlice=function(b){const r=orig.apply(this,arguments);if(S.h!==b.height){S.h=b.height;S.round=0;S.best=0}S.b=b;S.n=r.nonce;S.round+=r.hashes;S.total+=r.hashes;S.last=performance.now();if(r.found){S.found++;found(b,r)}return r};
+const el=g("bx");if(!el)return;let hk="";
+function paint(){const b=S.b,act=b&&performance.now()-S.last<700;el.classList.toggle("idle",!act);if(!b)return;
+const k=b.height+":"+b.prev+":"+b.merkle;if(k!==hk){hk=k;g("bxh").textContent="#"+b.height;const T=(2n**BigInt(256-b.bits)).toString(16).padStart(64,"0");g("bxt").innerHTML=hl(T);
+g("bxhdr").innerHTML=[["version","0x00000001"],["prev",b.prev],["merkle",b.merkle],["time",new Date(b.time*1e3).toISOString().slice(0,19)+"Z"],["bits",b.bits+" (difficulty "+b.bits+" zero bits)"],["nonce",'<span id="bxno">0</span>']].map(x=>'<div class="bx-r"><span>'+x[0]+"</span><code>"+x[1]+"</code></div>").join("")}
+if(!act)return;const no=g("bxno");if(no)no.textContent=S.n.toLocaleString();
+const lg=g("bxlog");for(let i=0;i<4;i++){const n=(S.n+i*7919+(Math.random()*1e6|0))>>>0,h=M.sha256d(hdr(b,n)),z=M.zeroBits(h);if(z>S.best)S.best=z;const d=document.createElement("div");d.innerHTML="<em>"+n.toString(16).padStart(8,"0")+"</em>"+hl(M.hex(h));lg.insertBefore(d,lg.firstChild)}while(lg.children.length>9)lg.lastChild.remove();
+const w=2**b.bits;g("bxbar").style.width=Math.min(100,S.best/b.bits*100)+"%";g("bxbt").textContent="best "+S.best+" / "+b.bits+" bits (sampled)";g("bxw").textContent=fn(S.round)+" / "+fn(w);g("bxa").textContent=fn(S.total);g("bxn").textContent=S.found}
+function spark(){const c=g("bxc");if(!c)return;const dpr=devicePixelRatio||1,W=c.clientWidth*dpr,H=c.clientHeight*dpr;if(c.width!==W)c.width=W;c.height=H;const x=c.getContext("2d");x.clearRect(0,0,W,H);const a=S.hr,mx=Math.max(1,...a);x.beginPath();a.forEach((v,i)=>{const X=i/59*W,Y=H-4*dpr-v/mx*(H-10*dpr);i?x.lineTo(X,Y):x.moveTo(X,Y)});x.strokeStyle="#e9ecef";x.lineWidth=1.5*dpr;x.stroke();x.lineTo(W,H);x.lineTo(0,H);const gr=x.createLinearGradient(0,0,0,H);gr.addColorStop(0,"rgba(255,255,255,.22)");gr.addColorStop(1,"rgba(255,255,255,0)");x.fillStyle=gr;x.fill();x.fillStyle="#8b8b99";x.font=10*dpr+"px monospace";x.fillText("hashrate "+fn(a[a.length-1]||0)+" H/s",6*dpr,12*dpr)}
+setInterval(paint,90);setInterval(()=>{const act=S.b&&performance.now()-S.last<1500;S.hr.push(act?S.total-S.lt:0);S.lt=S.total;if(S.hr.length>60)S.hr.shift();spark()},1000);
+})();</script>
+
+<script>(function(){const M={cool:[18,55,"Cool mode: laptop thanda thake (~25% CPU)."],bal:[30,30,"Balanced: moddhom speed (~50% CPU)."],max:[45,0,"Turbo: full speed, laptop gorom hobe. Charger lagiye chalao."]};let m="cool";try{m=localStorage.getItem("mirt_cpu")||"cool"}catch(e){}if(!M[m])m="cool";
+window.__pw={get s(){return document.hidden&&!window.mirtDesktop?2:M[m][0]},get d(){return document.hidden&&!window.mirtDesktop?1500:M[m][1]}};
+const bs=[...document.querySelectorAll("#cpu button")],n=document.getElementById("pwn");function set(k){m=k;try{localStorage.setItem("mirt_cpu",k)}catch(e){}bs.forEach(b=>b.classList.toggle("on",b.dataset.m===k));if(n)n.textContent=M[k][2]}bs.forEach(b=>b.onclick=()=>set(b.dataset.m));set(m)})();</script>
+<style id="v3css">
+:root{--ac:#7cf7ff;--ac2:#b388ff}
+html[data-th=gold]{--ac:#ffd166;--ac2:#ff8a3d;--bg:#070503}
+html[data-th=emerald]{--ac:#4dffb0;--ac2:#00c2ff;--bg:#020605}
+html[data-th=rose]{--ac:#ff6fae;--ac2:#ffb36b;--bg:#080307}
+html[data-th=mono]{--ac:#f2f4f6;--ac2:#8B8B99}
+#v3bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
+#v3glow{position:fixed;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,color-mix(in srgb,var(--ac) 22%,transparent),transparent 65%);transition:opacity .3s}
+.g{background:linear-gradient(100deg,var(--ac),var(--ac2),var(--ac));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:v3g 6s linear infinite}
+@keyframes v3g{to{background-position:220% 0}}
+.btn.f{background:linear-gradient(110deg,var(--ac),var(--ac2));color:#04060a;border:0;box-shadow:0 0 22px color-mix(in srgb,var(--ac) 45%,transparent);animation:v3p 2.8s ease-in-out infinite}
+@keyframes v3p{50%{box-shadow:0 0 38px color-mix(in srgb,var(--ac) 75%,transparent)}}
+.tkt{transition:transform .25s,border-color .3s,box-shadow .3s;transform-style:preserve-3d}
+.tkt:hover{border-color:color-mix(in srgb,var(--ac) 55%,transparent);box-shadow:0 10px 50px -12px color-mix(in srgb,var(--ac) 50%,transparent)}
+.v3in{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.v3in.on{opacity:1;transform:none}
+#v3th{position:fixed;right:12px;bottom:12px;z-index:61;display:flex;gap:7px;padding:8px 10px;border-radius:99px;background:rgba(8,8,10,.85);border:1px solid var(--ln);backdrop-filter:blur(8px)}
+#v3th i{width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s}#v3th i:hover{transform:scale(1.2)}#v3th i.on{border-color:#fff}
+#v3pro{margin-top:14px;border:1px solid var(--ln);border-radius:14px;padding:14px;background:linear-gradient(160deg,rgba(255,255,255,.04),transparent)}
+#v3pro h4{font:600 11px var(--m);letter-spacing:.2em;color:var(--ac);margin-bottom:10px}
+#v3pro .pg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}#v3pro .pg div{border:1px solid var(--ln);border-radius:10px;padding:9px}
+#v3pro small{display:block;font:10px var(--m);color:var(--mu);letter-spacing:.1em;text-transform:uppercase}#v3pro b{font:600 15px var(--m)}
+#v3pro button{margin-top:10px;font:11px var(--m);color:var(--ac);background:none;border:1px solid var(--ln);border-radius:99px;padding:7px 12px;cursor:pointer}
+#v3fx{position:fixed;inset:0;z-index:70;pointer-events:none}
+@media(prefers-reduced-motion:reduce){#v3bg,#v3glow{display:none}.g,.btn.f{animation:none}.v3in{opacity:1;transform:none}}
+</style><script id="v3js">(function(){
+const $=s=>document.querySelector(s),RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+/* themes */
+const TH=[["cyber","#7cf7ff"],["gold","#ffd166"],["emerald","#4dffb0"],["rose","#ff6fae"],["mono","#f2f4f6"]],bar=document.createElement("div");bar.id="v3th";
+function setT(k){document.documentElement.dataset.th=k;try{localStorage.setItem("mirt_th",k)}catch(e){}[...bar.children].forEach(c=>c.classList.toggle("on",c.dataset.k===k))}
+TH.forEach(([k,c])=>{const i=document.createElement("i");i.dataset.k=k;i.style.background=c;i.title=k;i.onclick=()=>setT(k);bar.appendChild(i)});document.body.appendChild(bar);
+let st="cyber";try{st=localStorage.getItem("mirt_th")||st}catch(e){}setT(st);
+/* particle network + cursor glow */
+const cv=document.createElement("canvas");cv.id="v3bg";document.body.prepend(cv);const x=cv.getContext("2d"),gl=document.createElement("div");gl.id="v3glow";document.body.prepend(gl);
+let W,H,P=[],mx=-9e3,my=-9e3;const rs=()=>{W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(70,W*H/16000|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))};rs();addEventListener("resize",rs);
+addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;gl.style.left=mx+"px";gl.style.top=my+"px"},{passive:true});
+function fr(){const c=getComputedStyle(document.documentElement).getPropertyValue("--ac").trim()||"#7cf7ff";x.clearRect(0,0,W,H);x.fillStyle=c;x.strokeStyle=c;
+for(const p of P){p.x=(p.x+p.vx+W)%W;p.y=(p.y+p.vy+H)%H;x.globalAlpha=.8;x.fillRect(p.x,p.y,2,2)}
+for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const a=P[i],b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){x.globalAlpha=(1-d/120)*.35;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+for(const p of P){const d=Math.hypot(p.x-mx,p.y-my);if(d<150){x.globalAlpha=(1-d/150)*.6;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mx,my);x.stroke()}}requestAnimationFrame(fr)}
+if(!RM)fr();
+/* reveal + 3D tilt */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll(".tkt,section h2,.lead").forEach(e=>{e.classList.add("v3in");io.observe(e)});
+if(!RM&&matchMedia("(hover:hover)").matches)document.querySelectorAll(".tkt").forEach(e=>{if(e.id==="acct")return;e.addEventListener("pointermove",ev=>{const r=e.getBoundingClientRect(),px=(ev.clientX-r.left)/r.width-.5,py=(ev.clientY-r.top)/r.height-.5;e.style.transform="perspective(900px) rotateY("+px*5+"deg) rotateX("+-py*5+"deg)"});e.addEventListener("pointerleave",()=>e.style.transform="")});
+/* mining pro panel */
+const num=s=>{const m=String(s).replace(/,/g,"").match(/([\d.]+)\s*([KMGT]?)/i);return m?parseFloat(m[1])*({K:1e3,M:1e6,G:1e9,T:1e12}[m[2].toUpperCase()]||1):0};
+const host=$("#pwn");if(host){const d=document.createElement("div");d.id="v3pro";d.innerHTML='<h4>MINING PRO &middot; SESSION</h4><div class="pg"><div><small>Session time</small><b id="v3t">00:00</b></div><div><small>Peak hashrate</small><b id="v3pk">0 H/s</b></div><div><small>Avg hashrate</small><b id="v3av">0 H/s</b></div><div><small>Solo odds / day</small><b id="v3od">-</b></div><div><small>Est. MIRT / day</small><b id="v3e">-</b></div><div><small>Blocks this session</small><b id="v3b">0</b></div></div><button id="v3snd" type="button">Sound: off</button>';host.after(d);
+let t0=0,pk=0,sm=0,n=0,snd=false;const f=v=>v>=1e9?(v/1e9).toFixed(2)+" GH/s":v>=1e6?(v/1e6).toFixed(2)+" MH/s":v>=1e3?(v/1e3).toFixed(1)+" KH/s":Math.round(v)+" H/s";
+$("#v3snd").onclick=e=>{snd=!snd;e.target.textContent="Sound: "+(snd?"on":"off")};
+setInterval(()=>{const run=/mining|run|on/i.test(($("#ms")||{}).textContent||"")&&!/idle/i.test(($("#ms")||{}).textContent||"");const hr=num(($("#mh")||{}).textContent);
+if(run&&hr>0){if(!t0)t0=Date.now();pk=Math.max(pk,hr);sm+=hr;n++;const s=(Date.now()-t0)/1e3|0;$("#v3t").textContent=String(s/60|0).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+const bits=parseFloat(String(($("#md")||{}).textContent).replace(/[^\d.]/g,""))||24,exp=Math.pow(2,bits)/hr,bpd=86400/Math.max(exp,1),rw=parseFloat(String(($("#mr")||{}).textContent).replace(/,/g,""))||7.5;
+$("#v3pk").textContent=f(pk);$("#v3av").textContent=f(sm/n);$("#v3od").textContent=(Math.min(1,1-Math.exp(-86400/exp))*100).toFixed(1)+"%";$("#v3e").textContent=(bpd*rw>1e6?"1M+":(bpd*rw).toFixed(2))}else t0=0},1000);
+/* block found: confetti + sound */
+const fx=document.createElement("canvas");fx.id="v3fx";document.body.appendChild(fx);const fc=fx.getContext("2d");let CF=[];
+function boom(){if(RM)return;fx.width=innerWidth;fx.height=innerHeight;const c=getComputedStyle(document.documentElement);CF=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*16,vy:Math.random()*-14-2,r:Math.random()*5+2,c:[c.getPropertyValue("--ac"),c.getPropertyValue("--ac2"),"#fff"][Math.random()*3|0],l:90}));(function a(){fc.clearRect(0,0,fx.width,fx.height);CF=CF.filter(p=>p.l>0);CF.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.l--;fc.globalAlpha=p.l/90;fc.fillStyle=p.c;fc.fillRect(p.x,p.y,p.r,p.r)});if(CF.length)requestAnimationFrame(a);else fc.clearRect(0,0,fx.width,fx.height)})()}
+function beep(){try{const A=new(window.AudioContext||window.webkitAudioContext)(),o=A.createOscillator(),g=A.createGain();o.frequency.value=660;o.connect(g);g.connect(A.destination);g.gain.setValueAtTime(.15,A.currentTime);g.gain.exponentialRampToValueAtTime(.001,A.currentTime+.6);o.frequency.exponentialRampToValueAtTime(1320,A.currentTime+.3);o.start();o.stop(A.currentTime+.6)}catch(e){}}
+const bn=$("#bxn");if(bn){let last=bn.textContent;new MutationObserver(()=>{if(bn.textContent!==last){last=bn.textContent;$("#v3b").textContent=last;boom();if(snd)beep()}}).observe(bn,{childList:true,characterData:true,subtree:true})}}
+})();</script><template id="v4rigsrc"><div class="v4c v4rig" id="v4rig"><canvas id="v4rain"></canvas>
+<div class="v4h" style="position:relative"><span><i></i>MIRT MINING RIG</span><b id="v4st">standby</b></div>
+<div class="v4rg">
+<div class="v4cw"><svg class="v4ring" viewBox="0 0 220 220"><defs><path id="v4cp" d="M110,110 m-98,0 a98,98 0 1,1 196,0 a98,98 0 1,1 -196,0"/></defs><circle cx="110" cy="110" r="108" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.5 6" opacity=".6"/><circle cx="110" cy="110" r="84" fill="none" stroke="currentColor" stroke-width="1" opacity=".25"/><text><textPath href="#v4cp" textLength="610" lengthAdjust="spacing">MIRTCOIN &#8226; PROOF OF WORK &#8226; SHA-256D &#8226; 27,000,000 MAX &#8226; MINE IT OWN IT &#8226;</textPath></text></svg><div class="v4coin"><svg viewBox="0 0 200 200"><use href="#mc"/></svg></div></div>
+<pre class="v4ascii" id="v4asc" aria-label="MIRT"></pre>
+<div class="v4sub">double SHA-256 &middot; nonce search &middot; solo mining</div>
+<div class="v4tl"><div class="hot"><small>Hashrate</small><b id="v4t1">0 H/s</b></div><div><small>Difficulty</small><b id="v4t2">-</b></div><div><small>Reward</small><b id="v4t3">-</b></div><div><small>Next block</small><b id="v4t4">-</b></div><div><small>Session hashes</small><b id="v4t5">0</b></div><div class="hot"><small>Blocks found</small><b id="v4t6">0</b></div></div>
+</div></div>
+</template><template id="v4rig2src"><div class="v4c v4term"><div class="v4h"><span class="v4dots"><i></i><i></i><i></i></span><span>mirt-miner &mdash; live</span><b id="v4lc">0 lines</b></div><pre id="v4log"></pre><div class="v4pr">$ <span id="v4cmd">mirt-miner --algo sha256d --solo</span><u>&#9608;</u></div></div>
+<div class="v4c"><div class="v4h"><span>HASH BITS &middot; 16x16</span><b id="v4bz">0 / - zero bits</b></div><div class="v4bm"><canvas id="v4bits" width="256" height="256"></canvas><div class="v4lg"><div><s style="background:#4dffb0"></s>leading zeros reached</div><div><s style="background:var(--ac)"></s>1-bit</div><div><s style="background:#2a2f36"></s>0-bit</div><div><s style="border:1px solid var(--ac2)"></s>zero zone needed to win</div><div style="margin-top:6px;color:#fff;word-break:break-all" id="v4hh">-</div></div></div></div>
+<div class="v4c"><div class="v4h"><span>BLOCK HEADER &middot; HEX DUMP</span><b>73 bytes</b></div><pre id="v4hex">start mining to see the live header</pre><div class="v4fl"><span><s style="background:#7f8a99"></s>prev</span><span><s style="background:#c9a56b"></s>merkle</span><span><s style="background:#8fd3ff"></s>time</span><span><s style="background:var(--ac2)"></s>bits</span><span><s style="background:#4dffb0"></s>nonce</span></div></div>
+</template><style id="v4css">html[data-th=btc]{--ac:#ff8a1f;--ac2:#ffc247;--bg:#060302}
+html[data-th=btc] body{background-image:radial-gradient(70vmax 50vmax at 50% -8%,rgba(255,120,20,.22),transparent 60%),radial-gradient(rgba(255,160,60,.07) 1px,transparent 1px);background-size:auto,26px 26px}
+#v3th i[data-k=btc]{background:linear-gradient(135deg,#ffc247,#ff6a00)}
+.v4svg{display:block;width:100%;height:100%;overflow:visible}
+/* hero coin */
+.v4hero{display:flex;justify-content:center;margin:6px 0 18px;perspective:900px}
+.v4hc{position:relative;width:176px;height:176px}
+.v4hc svg.v4svg{filter:drop-shadow(0 12px 38px color-mix(in srgb,var(--ac) 55%,transparent));animation:v4flip 7s ease-in-out infinite}
+.v4hc:before{content:"";position:absolute;inset:-26px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--ac) 38%,transparent),transparent 66%);animation:v4pulse 3.2s ease-in-out infinite;z-index:-1}
+@keyframes v4flip{0%,100%{transform:rotateY(-18deg)}50%{transform:rotateY(18deg)}}
+@keyframes v4pulse{50%{opacity:.45;transform:scale(1.12)}}
+/* section shells */
+.v4c{position:relative;margin:14px 0;border:1px solid var(--ln);border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.01));overflow:hidden}
+.v4h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--ln);font:600 11px var(--m);letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.v4h b{font-weight:500;color:var(--mu);letter-spacing:.08em}
+.v4h i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#555;margin-right:8px;vertical-align:1px}
+.v4rig.on .v4h i{background:#4dffb0;box-shadow:0 0 10px #4dffb0;animation:v4blink 1s infinite}
+@keyframes v4blink{50%{opacity:.3}}
+/* rig */
+.v4rig{margin-top:6px}
+#v4rain{position:absolute;inset:0;width:100%;height:100%;opacity:.38;pointer-events:none}
+.v4rg{position:relative;padding:16px 14px 14px;text-align:center}
+.v4cw{position:relative;width:200px;height:200px;margin:2px auto 6px}
+.v4cw .v4ring{position:absolute;inset:0;width:100%;height:100%;animation:v4rot 28s linear infinite;color:var(--ac)}
+.v4rig.on .v4cw .v4ring{animation-duration:6s}
+.v4cw .v4coin{position:absolute;inset:26px;perspective:700px}
+.v4cw .v4coin svg{width:100%;height:100%;filter:drop-shadow(0 8px 24px color-mix(in srgb,var(--ac) 55%,transparent));animation:v4spin 9s linear infinite}
+.v4rig.on .v4cw .v4coin svg{animation-duration:1.7s}
+@keyframes v4rot{to{transform:rotate(360deg)}}
+@keyframes v4spin{to{transform:rotateY(360deg)}}
+.v4ring text{font:600 9.5px var(--m);fill:currentColor;letter-spacing:.1em}
+.v4ascii{font:700 13px/1.0 ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace;letter-spacing:0;color:var(--ac);text-shadow:0 0 12px color-mix(in srgb,var(--ac) 70%,transparent);white-space:pre;overflow:hidden;margin:6px 0 2px;user-select:none}
+.v4sub{font:11px var(--m);color:var(--mu);letter-spacing:.14em;text-transform:uppercase}
+.v4tl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;text-align:left}
+.v4tl div{border:1px solid var(--ln);border-radius:10px;padding:8px 9px;background:rgba(0,0,0,.35);backdrop-filter:blur(2px)}
+.v4tl small{display:block;font:9.5px var(--m);color:var(--mu);letter-spacing:.1em;text-transform:uppercase}
+.v4tl b{display:block;font:600 13px var(--m);color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v4tl .hot b{color:var(--ac2)}
+/* terminal */
+.v4term pre{margin:0;padding:12px 14px;height:230px;overflow:hidden;font:10px/1.55 var(--m);color:#d5d9de;white-space:pre-wrap;word-break:break-all;display:flex;flex-direction:column;justify-content:flex-end}
+.v4term .t{color:#6d727a}.v4term .o{color:var(--ac)}.v4term .g{color:#4dffb0;-webkit-text-fill-color:#4dffb0;background:none;animation:none}.v4term .y{color:var(--ac2)}.v4term .r{color:#ff6b6b}.v4term .star{color:#fff;background:color-mix(in srgb,var(--ac) 30%,transparent);padding:0 4px;border-radius:3px}
+.v4dots i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;margin-left:0;vertical-align:0}.v4dots i:nth-child(1){background:#ff5f57}.v4dots i:nth-child(2){background:#febc2e}.v4dots i:nth-child(3){background:#28c840}
+.v4pr{padding:0 14px 12px;font:11px var(--m);color:var(--ac)}.v4pr u{text-decoration:none;animation:v4blink 1s steps(1) infinite}
+/* bit matrix + hexdump */
+.v4row{display:grid;grid-template-columns:1fr;gap:0}
+.v4bm{padding:14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+#v4bits{width:148px;height:148px;flex:none;border-radius:8px;background:rgba(0,0,0,.4);image-rendering:pixelated}
+.v4lg{font:10.5px/1.9 var(--m);color:var(--mu);flex:1;min-width:130px}.v4lg b{color:#fff;font-weight:600}
+.v4lg s{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;text-decoration:none;vertical-align:-1px}
+#v4hex{margin:0;padding:12px 14px;font:10.4px/1.7 var(--m);color:#9aa0a8;overflow-x:auto;white-space:pre}
+#v4hex .of{color:#575c64}#v4hex .p{color:#7f8a99}#v4hex .m{color:#c9a56b}#v4hex .tm{color:#8fd3ff}#v4hex .b{color:var(--ac2)}#v4hex .n{color:#4dffb0;font-weight:700}#v4hex .as{color:#575c64}
+.v4fl{display:flex;flex-wrap:wrap;gap:6px 12px;padding:0 14px 12px;font:10px var(--m);color:var(--mu)}
+.v4fl s{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;text-decoration:none}
+/* wallet */
+.v4w{padding:0!important;overflow:hidden}
+.v4wh{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--ln);background:linear-gradient(100deg,color-mix(in srgb,var(--ac) 14%,transparent),transparent)}
+.v4wh svg{width:38px;height:38px;flex:none}
+.v4wh b{display:block;font:600 14px var(--m);letter-spacing:.04em;color:#fff}.v4wh small{font:10px var(--m);color:var(--mu);letter-spacing:0;text-transform:none}
+.v4net{margin-left:auto;font:600 10px var(--m);letter-spacing:.14em;color:#4dffb0;border:1px solid rgba(77,255,176,.35);border-radius:99px;padding:4px 9px;white-space:nowrap}
+.v4net i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#4dffb0;margin-right:6px;animation:v4blink 1.4s infinite}
+.v4bal{padding:20px 16px 12px;text-align:center;background:radial-gradient(120% 90% at 50% 0,color-mix(in srgb,var(--ac) 14%,transparent),transparent 70%)}
+.v4bal small{font:10.5px var(--m);letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}
+.v4bal .big{font:700 clamp(26px,9vw,38px)/1.15 var(--m);color:#fff;margin:6px 0 2px;text-shadow:0 0 28px color-mix(in srgb,var(--ac) 45%,transparent);word-break:break-all}
+.v4bal .big #ab{color:inherit}
+.v4mn{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:14px;text-align:left}
+.v4mn div{min-width:0;border:1px solid var(--ln);border-radius:10px;padding:8px 9px;background:rgba(0,0,0,.3)}
+.v4mn b{display:block;font:600 12.5px var(--m);color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v4tabs{display:flex;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);background:rgba(0,0,0,.28)}
+.v4tabs button{flex:1;font:600 11px var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mu);background:none;border:0;border-bottom:2px solid transparent;padding:13px 4px;cursor:pointer}
+.v4tabs button.on{color:var(--ac);border-bottom-color:var(--ac);background:color-mix(in srgb,var(--ac) 8%,transparent)}
+.v4p{display:none;padding:16px}.v4p.on{display:block;animation:v4in .35s}
+@keyframes v4in{from{opacity:0;transform:translateY(8px)}}
+.v4qa{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.v4qa button{border:1px solid var(--ln);background:rgba(255,255,255,.03);color:#fff;border-radius:12px;padding:12px 4px;font:600 11px var(--m);cursor:pointer;letter-spacing:.06em;text-transform:uppercase}
+.v4qa button b{display:block;font-size:19px;color:var(--ac);margin-bottom:3px}
+.v4qa button:active{transform:scale(.97)}
+.v4fee{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.v4fee button,.v4mx,.v4ps{border:1px solid var(--ln);background:rgba(255,255,255,.04);color:var(--mu);border-radius:10px;padding:9px 4px;font:600 11px var(--m);cursor:pointer}
+.v4fee button.on{color:#04060a;background:linear-gradient(110deg,var(--ac),var(--ac2));border-color:transparent}
+.v4fee button small{display:block;font-weight:400;opacity:.8}
+.v4in{position:relative}.v4in input{padding-right:70px}
+.v4mx,.v4ps{position:absolute;right:6px;bottom:6px;padding:7px 11px;color:var(--ac)}
+.v4ok{font:11px var(--m);min-height:18px;margin-top:6px;color:var(--mu)}.v4ok.y{color:#4dffb0}.v4ok.n{color:#ff6b6b}
+.v4sum{display:flex;justify-content:space-between;margin-top:12px;padding:11px 12px;border:1px dashed var(--ln);border-radius:10px;font:12px var(--m);color:var(--mu)}.v4sum b{color:#fff}
+.v4qrw{display:flex;justify-content:center;margin:2px 0 14px}.v4qrc{background:#fff;padding:10px;border-radius:16px;box-shadow:0 0 40px color-mix(in srgb,var(--ac) 40%,transparent);position:relative}
+#v4qr{display:block;width:210px;height:210px;image-rendering:pixelated}
+.v4qrc svg{position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;background:#fff;border-radius:50%;padding:2px}
+.v4cf{display:inline-block;font:600 9.5px var(--m);letter-spacing:.06em;border-radius:99px;padding:2px 7px;margin-left:8px;color:#4dffb0;border:1px solid rgba(77,255,176,.4);vertical-align:1px}.v4cf.w{color:var(--ac2);border-color:color-mix(in srgb,var(--ac2) 45%,transparent)}
+.v4sb{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;padding:9px 16px;border-top:1px solid var(--ln);font:10.5px var(--m);color:var(--mu);background:rgba(0,0,0,.35)}.v4sb b{color:#4dffb0;font-weight:500}
+#acct .sr{border-radius:10px}
+.v4ft{display:flex;justify-content:center;margin-bottom:10px}.v4ft svg{width:46px;height:46px}
+@media(prefers-reduced-motion:reduce){.v4hc svg.v4svg,.v4hc:before,.v4cw .v4ring,.v4cw .v4coin svg,.v4net i,.v4pr u{animation:none!important}#v4rain{display:none}}
+</style><script id="v4qrjs">/* Compact QR encoder: byte mode, EC level M, versions 1-6 */
+const MirtQR=(function(){
+const EXP=new Uint8Array(512),LOG=new Uint8Array(256);{let x=1;for(let i=0;i<255;i++){EXP[i]=x;LOG[x]=i;x<<=1;if(x&256)x^=0x11d}for(let i=255;i<512;i++)EXP[i]=EXP[i-255]}
+const gmul=(a,b)=>a&&b?EXP[LOG[a]+LOG[b]]:0;
+function rsGen(n){let g=[1];for(let i=0;i<n;i++){const ng=new Array(g.length+1).fill(0);for(let j=0;j<g.length;j++){ng[j]^=g[j];ng[j+1]^=gmul(g[j],EXP[i])}g=ng}return g}
+function rsEnc(d,n){const g=rsGen(n),r=new Array(n).fill(0);for(const b of d){const f=b^r.shift();r.push(0);if(f)for(let i=0;i<n;i++)r[i]^=gmul(g[i+1],f)}return r}
+/* [ecPerBlock, blocks(g1 count, g1 data, g2 count, g2 data)] level M */
+const VER={1:[10,1,16,0,0],2:[16,1,28,0,0],3:[26,1,44,0,0],4:[18,2,32,0,0],5:[24,2,43,2,44],6:[16,4,27,0,0]};
+const ALIGN={1:[],2:[6,18],3:[6,22],4:[6,26],5:[6,30],6:[6,34]};
+function encode(text){
+const bytes=Array.from(new TextEncoder().encode(text));let v=1;
+for(;v<=6;v++){const e=VER[v],cap=e[1]*e[2]+e[3]*e[4];if(bytes.length+2<=cap)break}
+if(v>6)throw Error("QR text too long");
+const [ec,n1,d1,n2,d2]=VER[v],total=n1*d1+n2*d2,size=17+4*v;
+let bits=[];const put=(val,len)=>{for(let i=len-1;i>=0;i--)bits.push((val>>i)&1)};
+put(4,4);put(bytes.length,8);bytes.forEach(b=>put(b,8));
+const cap=total*8;put(0,Math.min(4,cap-bits.length));while(bits.length%8)bits.push(0);
+const data=[];for(let i=0;i<bits.length;i+=8){let b=0;for(let j=0;j<8;j++)b=(b<<1)|bits[i+j];data.push(b)}
+for(let p=0;data.length<total;p^=1)data.push(p?0x11:0xec);
+const blocks=[];let o=0;for(let i=0;i<n1;i++){blocks.push(data.slice(o,o+d1));o+=d1}for(let i=0;i<n2;i++){blocks.push(data.slice(o,o+d2));o+=d2}
+const ecs=blocks.map(b=>rsEnc(b,ec)),fin=[],maxd=Math.max(d1,d2||0);
+for(let i=0;i<maxd;i++)blocks.forEach(b=>{if(i<b.length)fin.push(b[i])});
+for(let i=0;i<ec;i++)ecs.forEach(e=>fin.push(e[i]));
+const M=Array.from({length:size},()=>new Array(size).fill(null)),F=Array.from({length:size},()=>new Array(size).fill(false));
+const set=(x,y,val,f=true)=>{if(x<0||y<0||x>=size||y>=size)return;M[y][x]=val;if(f)F[y][x]=true};
+function finder(cx,cy){for(let dy=-1;dy<=7;dy++)for(let dx=-1;dx<=7;dx++){const on=dx>=0&&dx<=6&&dy>=0&&dy<=6&&(dx==0||dx==6||dy==0||dy==6||(dx>=2&&dx<=4&&dy>=2&&dy<=4));set(cx+dx,cy+dy,on)}}
+finder(0,0);finder(size-7,0);finder(0,size-7);
+for(let i=8;i<size-8;i++){set(i,6,i%2==0);set(6,i,i%2==0)}
+const al=ALIGN[v];for(const ay of al)for(const ax of al){if((ax==6&&ay==6)||(ax==6&&ay==al[al.length-1])||(ax==al[al.length-1]&&ay==6))continue;for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++)set(ax+dx,ay+dy,Math.max(Math.abs(dx),Math.abs(dy))!=1)}
+set(8,size-8,true);
+for(let i=0;i<9;i++){if(!F[8][i]&&i!=6)set(i,8,false);if(!F[i][8]&&i!=6)set(8,i,false)}for(let i=0;i<8;i++){set(size-1-i,8,false);set(8,size-1-i,false)}
+const reserved=F.map(r=>r.slice());
+const dbits=[];fin.forEach(b=>{for(let i=7;i>=0;i--)dbits.push((b>>i)&1)});
+const place=()=>{const out=M.map(r=>r.slice());let k=0,up=true;for(let x=size-1;x>0;x-=2){if(x==6)x--;for(let i=0;i<size;i++){const y=up?size-1-i:i;for(let dx=0;dx<2;dx++){const xx=x-dx;if(reserved[y][xx])continue;out[y][xx]=k<dbits.length?dbits[k]==1:false;k++}}up=!up}return out};
+const base=place();
+const MASKS=[(x,y)=>(x+y)%2==0,(x,y)=>y%2==0,(x,y)=>x%3==0,(x,y)=>(x+y)%3==0,(x,y)=>(((y>>1)+Math.floor(x/3))%2)==0,(x,y)=>((x*y)%2+(x*y)%3)==0,(x,y)=>(((x*y)%2+(x*y)%3)%2)==0,(x,y)=>(((x+y)%2+(x*y)%3)%2)==0];
+function fmtBits(mask){let d=(0<<3)|mask/*M=00*/;let r=d<<10;for(let i=14;i>=10;i--)if((r>>i)&1)r^=0x537<<(i-10);return((d<<10)|r)^0x5412}
+function build(mask){const g=base.map(r=>r.slice());for(let y=0;y<size;y++)for(let x=0;x<size;x++)if(!reserved[y][x]&&MASKS[mask](x,y))g[y][x]=!g[y][x];
+const f=fmtBits(mask),bit=i=>((f>>i)&1)==1;
+for(let i=0;i<=5;i++)g[i][8]=bit(i);g[7][8]=bit(6);g[8][8]=bit(7);g[8][7]=bit(8);for(let i=9;i<15;i++)g[8][14-i]=bit(i);
+for(let i=0;i<8;i++)g[8][size-1-i]=bit(i);for(let i=8;i<15;i++)g[size-15+i][8]=bit(i);g[size-8][8]=true;return g}
+function penalty(g){let p=0;for(let y=0;y<size;y++){let run=1;for(let x=1;x<size;x++){if(g[y][x]==g[y][x-1]){run++;if(run==5)p+=3;else if(run>5)p++}else run=1}}
+for(let x=0;x<size;x++){let run=1;for(let y=1;y<size;y++){if(g[y][x]==g[y-1][x]){run++;if(run==5)p+=3;else if(run>5)p++}else run=1}}
+for(let y=0;y<size-1;y++)for(let x=0;x<size-1;x++){const c=g[y][x];if(c==g[y][x+1]&&c==g[y+1][x]&&c==g[y+1][x+1])p+=3}
+let dark=0;g.forEach(r=>r.forEach(c=>{if(c)dark++}));p+=Math.floor(Math.abs(dark*20-size*size*10)/(size*size))*10;return p}
+let best=null,bp=1e9;for(let m=0;m<8;m++){const g=build(m),p=penalty(g);if(p<bp){bp=p;best=g}}return best}
+function draw(canvas,text,px,fg,bg){const g=encode(text),q=4,n=g.length,s=Math.floor(px/(n+q*2))||1;canvas.width=canvas.height=s*(n+q*2);const c=canvas.getContext("2d");c.fillStyle=bg;c.fillRect(0,0,canvas.width,canvas.height);c.fillStyle=fg;for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(g[y][x])c.fillRect((x+q)*s,(y+q)*s,s,s)}
+return{encode,draw}})();
+if(typeof module!=="undefined")module.exports=MirtQR;
+</script><script id="v4js">(function(){
+const $=s=>document.querySelector(s),g=id=>document.getElementById(id),M=(typeof MirtChain!=="undefined"?MirtChain:null),RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const num=s=>parseFloat(String(s).replace(/,/g,""))||0;
+/* ---------- theme: Bitcoin orange default ---------- */
+(function(){const bar=g("v3th");if(!bar)return;const i=document.createElement("i");i.dataset.k="btc";i.title="bitcoin";bar.prepend(i);
+const mark=k=>[...bar.children].forEach(c=>c.classList.toggle("on",c.dataset.k===k));
+const set=k=>{document.documentElement.dataset.th=k;try{localStorage.setItem("mirt_th4",k)}catch(e){}mark(k)};
+i.onclick=()=>set("btc");bar.addEventListener("click",e=>{const c=e.target.closest("i");if(c&&c!==i)setTimeout(()=>{try{localStorage.setItem("mirt_th4",c.dataset.k)}catch(x){}mark(c.dataset.k)},0)});
+let t="btc";try{t=localStorage.getItem("mirt_th4")||"btc"}catch(e){}set(t)})();
+/* ---------- hero coin + footer coin ---------- */
+const orb=g("orb");if(orb){const d=document.createElement("div");d.className="v4hero";d.innerHTML='<div class="v4hc"><svg class="v4svg" viewBox="0 0 200 200"><use href="#mc"/></svg></div>';orb.parentNode.insertBefore(d,orb)}
+const ft=$("footer .ft");if(ft){const d=document.createElement("div");d.className="v4ft";d.innerHTML='<svg viewBox="0 0 200 200"><use href="#mc"/></svg>';ft.prepend(d)}
+/* ---------- wallet ---------- */
+(function(){const acct=g("acct");if(!acct)return;
+const tabs=[...acct.querySelectorAll("#v4tabs button")],panes=[...acct.querySelectorAll(".v4p")];
+const go=t=>{if(t==="mine"){location.hash="#mine";return}tabs.forEach(b=>b.classList.toggle("on",b.dataset.t===t));panes.forEach(p=>p.classList.toggle("on",p.dataset.p===t));if(t==="recv")qr()};
+tabs.forEach(b=>b.onclick=()=>go(b.dataset.t));acct.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
+/* hide the old login-visible state reset: when logging in show Overview */
+let wasOn=acct.style.display!=="none";new MutationObserver(()=>{const on=acct.style.display!=="none";if(on&&!wasOn)go("ov");wasOn=on}).observe(acct,{attributes:true,attributeFilter:["style"]});
+/* address validity + paste + max + fee */
+const st=g("st"),sa=g("sa"),sf=g("sf"),ok=g("v4ok"),tot=g("v4tot");
+const calc=()=>{const a=M.parseAmt(sa.value||"0")||0,f=M.parseAmt(sf.value||"0")||0;tot.textContent=M.fmt(a+f)+" MIRT"};
+const chk=()=>{const v=st.value.trim();if(!v){ok.textContent="";ok.className="v4ok";return}if(M.validAddr(v)){ok.textContent="\u2713 valid MIRT address (checksum ok)";ok.className="v4ok y"}else{ok.textContent="\u2717 not a valid MIRT address";ok.className="v4ok n"}};
+st.addEventListener("input",chk);sa.addEventListener("input",calc);sf.addEventListener("input",()=>{calc();acct.querySelectorAll("#v4fee button").forEach(b=>b.classList.toggle("on",b.dataset.f===sf.value))});
+g("v4ps").onclick=async()=>{try{st.value=(await navigator.clipboard.readText()).trim();chk()}catch(e){}};
+g("v4mx").onclick=()=>{const bal=M.parseAmt(g("ab").textContent.replace(/[^\d.]/g,""))||0,f=M.parseAmt(sf.value||"0")||0;if(bal>f){sa.value=M.fmt(bal-f).replace(/,/g,"");calc()}};
+acct.querySelectorAll("#v4fee button").forEach(b=>b.onclick=()=>{sf.value=b.dataset.f;acct.querySelectorAll("#v4fee button").forEach(x=>x.classList.toggle("on",x===b));calc()});
+const ss=g("ss");ss.addEventListener("click",()=>setTimeout(()=>{if(/^Sent/.test(g("smsg").textContent)){st.value="";sa.value="";calc();chk()}},400));
+/* receive + QR */
+const ra=g("v4ra"),rq=g("v4rq"),qn=g("v4qn");
+function qr(){const a=(g("aad").textContent||"").trim();if(!a)return;ra.textContent=a;const amt=M.parseAmt(rq.value||"");const uri=amt?"mirtcoin:"+a+"?amount="+rq.value.trim():a;qn.textContent=amt?"QR contains a payment request for "+rq.value.trim()+" MIRT.":"QR contains the plain address.";try{MirtQR.draw(g("v4qr"),uri,210,"#000","#fff")}catch(e){}}
+rq.addEventListener("input",qr);new MutationObserver(qr).observe(g("aad"),{childList:true,characterData:true,subtree:true});
+g("v4cp2").onclick=()=>navigator.clipboard.writeText(g("aad").textContent).then(()=>{const t=g("toast");t.textContent="Address copied";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2000)});
+/* confirmations badges + status */
+const ah=g("ah");let busy=false;
+function badges(){if(busy)return;busy=true;const h=parseInt(String((g("eh")||{}).textContent).replace(/\D/g,""))||0;ah.querySelectorAll(".sr").forEach(r=>{if(r.querySelector(".v4cf"))return;const m=r.textContent.match(/block #(\d+)/);if(!m)return;const c=Math.max(1,h-parseInt(m[1])+1),s=document.createElement("span");s.className="v4cf"+(c<6?" w":"");s.textContent=c>=100?"100+ conf":c+" conf";const d=r.querySelector("div");if(d&&d.firstChild)d.insertBefore(s,d.querySelector("small"))});busy=false}
+new MutationObserver(badges).observe(ah,{childList:true});
+setInterval(()=>{const h=String((g("eh")||{}).textContent).replace(/\D/g,"")||"-";const au=g("au");if(au&&au.textContent==="recovery-phrase wallet")au.textContent="Seed wallet";g("v4h").textContent=h==="-"?"-":"#"+h;g("v4sh").textContent=h;g("v4m").textContent=(g("mp")||{}).textContent||"0";badges()},1000);
+})();
+/* ---------- mining rig ---------- */
+const mine=g("mine");if(!mine||!M)return;
+const tk=mine.querySelector(".tkt");const wrap=document.createElement("div");wrap.innerHTML=g("v4rigsrc").innerHTML;
+const rig=wrap.querySelector("#v4rig");tk.parentNode.insertBefore(rig,tk);
+const bx=g("bx");const extra=document.createElement("div");extra.innerHTML=g("v4rig2src").innerHTML;[...extra.children].reverse().forEach(n=>bx.after(n));
+const S={b:null,n:0,t:0,hash:"",total:0,found:0,key:"",act:false,lt:0};
+const o=M.mineSlice;M.mineSlice=function(b){const r=o.apply(this,arguments);S.b=b;S.n=r.nonce;S.t=performance.now();S.total+=r.hashes;if(r.last)S.hash=r.last;if(r.found){S.hash=b.hash;S.found++;onFound(b,r)}return r};
+/* ASCII banner with decrypt effect */
+const ART=["█   █  ███  ████   █████", "██ ██   █   █   █    █  ", "█ █ █   █   ████     █  ", "█   █   █   █  █     █  ", "█   █  ███  █   █    █  "];
+const GL="01abcdef<>/{}#$%&";let ph=0;const asc=g("v4asc");
+function drawArt(){ph++;const cyc=ph%160,p=cyc<40?1-cyc/40:0;asc.textContent=ART.map(l=>[...l].map(c=>c===" "?c:(Math.random()<p?GL[Math.random()*GL.length|0]:c)).join("")).join("\n")}
+drawArt();if(!RM)setInterval(drawArt,70);
+/* matrix rain */
+const rc=g("v4rain"),rx=rc.getContext("2d");let cols=[],vis=true;
+new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(rig);
+function rsz(){rc.width=rig.clientWidth;rc.height=rig.clientHeight;cols=Array.from({length:Math.ceil(rc.width/14)},()=>Math.random()*rc.height/14)}rsz();addEventListener("resize",rsz);
+function rain(){if(!vis||RM)return;rx.fillStyle="rgba(6,3,2,.16)";rx.fillRect(0,0,rc.width,rc.height);rx.font="13px monospace";const c=css("--ac")||"#ff8a1f",sp=S.act?1:.35;
+cols.forEach((y,i)=>{const ch="0123456789abcdef"[Math.random()*16|0];rx.fillStyle=Math.random()<.04?"#fff":c;rx.fillText(ch,i*14,y*14);cols[i]=y*14>rc.height&&Math.random()>.975?0:y+sp})}
+setInterval(rain,55);
+/* terminal */
+const lg=g("v4log");let lines=0;const ts=()=>new Date().toTimeString().slice(0,8);
+function log(h){const d=document.createElement("div");d.innerHTML='<span class="t">['+ts()+']</span> '+h;lg.appendChild(d);lines++;while(lg.children.length>16)lg.firstChild.remove();g("v4lc").textContent=lines+" lines"}
+log('<span class="o">mirt-miner 4.0</span> ready &middot; algo sha256d &middot; press <span class="y">Start mining</span>');
+function onFound(b,r){log('<span class="star">&#9733; BLOCK FOUND #'+b.height+'</span> <span class="g">accepted</span>');log('hash <span class="g">'+b.hash.slice(0,28)+'&hellip;</span> nonce <span class="y">0x'+(r.nonce>>>0).toString(16).padStart(8,"0")+'</span>')}
+/* helpers */
+const hr=()=>(g("mh")||{}).textContent||"0 H/s";
+const fn=n=>n>=1e12?(n/1e12).toFixed(2)+"T":n>=1e9?(n/1e9).toFixed(2)+"G":n>=1e6?(n/1e6).toFixed(2)+"M":n>=1e3?(n/1e3).toFixed(1)+"K":String(Math.round(n));
+/* bit matrix + hexdump */
+const bc=g("v4bits"),bxx=bc.getContext("2d");
+function bits(){const h=S.hash||"";if(h.length!==64)return;const need=S.b?S.b.bits:0,A=css("--ac")||"#ff8a1f",A2=css("--ac2")||"#ffc247";bxx.clearRect(0,0,256,256);let lead=true,z=0;
+for(let i=0;i<256;i++){const bit=(parseInt(h[i>>2],16)>>(3-(i&3)))&1,x=(i%16)*16,y=(i>>4)*16;if(lead&&!bit)z++;else lead=false;
+bxx.fillStyle=bit?A:(i<z?"#4dffb0":"#2a2f36");bxx.fillRect(x+1,y+1,14,14);if(i<need){bxx.strokeStyle=A2;bxx.lineWidth=1;bxx.strokeRect(x+.5,y+.5,15,15)}}
+g("v4bz").textContent=z+" / "+need+" zero bits";g("v4hh").textContent=h}
+function hexd(){const b=S.b;if(!b)return;const u=new Uint8Array(73),d=new DataView(u.buffer);u.set(M.unhex(b.prev),0);u.set(M.unhex(b.merkle),32);d.setUint32(64,b.time>>>0);u[68]=b.bits;d.setUint32(69,S.n>>>0);
+let out="";for(let r=0;r<5;r++){let hx="",as="";for(let c=0;c<16;c++){const i=r*16+c;if(i>72){hx+="   ";continue}const v=u[i],cl=i<32?"p":i<64?"m":i<68?"tm":i<69?"b":"n";hx+='<span class="'+cl+'">'+v.toString(16).padStart(2,"0")+"</span> ";as+=v>31&&v<127?String.fromCharCode(v).replace("<","&lt;").replace("&","&amp;"):"."}out+='<span class="of">'+(r*16).toString(16).padStart(4,"0")+":</span> "+hx+' <span class="as">'+as+"</span>\n"}g("v4hex").innerHTML=out}
+/* main tick */
+let lastHr=0,lastJob="";
+setInterval(()=>{const act=!!S.b&&performance.now()-S.t<900;if(act!==S.act){S.act=act;rig.classList.toggle("on",act);g("v4st").textContent=act?"mining":"standby";if(act)log('<span class="g">miner started</span> &middot; '+(((document.querySelector("#cpu .on")||{}).textContent)||"cpu")+' &middot; wallet '+((g("aad")||{}).textContent||"").slice(0,10)+'&hellip;');else if(S.b)log('<span class="r">miner paused</span>')}
+if(S.b){const k=S.b.height+S.b.prev;if(k!==lastJob){lastJob=k;log('job <span class="o">#'+S.b.height+'</span> bits <span class="y">'+S.b.bits+'</span> txs '+S.b.txs.length+' prev '+S.b.prev.slice(0,12)+'&hellip;')}}
+g("v4t1").textContent=hr();g("v4t2").textContent=(g("md")||{}).textContent||"-";g("v4t3").textContent=(g("mr")||{}).textContent||"-";g("v4t4").textContent=(g("mn")||{}).textContent||"-";g("v4t5").textContent=fn(S.total);g("v4t6").textContent=S.found;
+if(act&&performance.now()-lastHr>2500){lastHr=performance.now();log('hashrate <span class="o">'+hr()+'</span> nonce <span class="y">0x'+(S.n>>>0).toString(16).padStart(8,"0")+'</span> best '+((g("bxbt")||{}).textContent||"").replace(/^best\s*/,"").replace(/\s*bits.*$/,"").replace(/\s+/g,""))}
+},250);
+setInterval(()=>{if(vis&&S.act){bits();hexd()}},120);
+})();
+</script></body></html>
