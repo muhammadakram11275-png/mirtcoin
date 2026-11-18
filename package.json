@@ -2,7 +2,7 @@
   "name": "mirtcoin-desktop",
   "productName": "MirtCoin",
   "version": "4.3.0",
-  "description": "MirtCoin ($MIRT) desktop: full node + wallet + miner in one app",
+ "description": "MirtCoin (MIRT) desktop: full node + wallet + miner in one app",
   "main": "main.js",
   "author": "MirtCoin",
   "license": "MIT",
